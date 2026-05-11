@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 350 60% 99%;
+    --foreground: 220 35% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 35% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 35% 18%;
+
+    /* Soft rose primary */
+    --primary: 345 75% 62%;
+    --primary-foreground: 0 0% 100%;
+    --primary-soft: 345 80% 96%;
+
+    /* Calming medical blue */
+    --secondary: 210 70% 55%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-soft: 210 80% 96%;
+
+    --muted: 340 30% 96%;
+    --muted-foreground: 220 15% 45%;
+
+    --accent: 345 80% 94%;
+    --accent-foreground: 345 75% 35%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 340 25% 92%;
+    --input: 340 25% 92%;
+    --ring: 345 75% 62%;
+
+    --radius: 1.25rem;
+
+    /* Brand gradients & shadows */
+    --gradient-hero: linear-gradient(135deg, hsl(345 80% 97%) 0%, hsl(210 80% 97%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(345 75% 62%) 0%, hsl(330 80% 68%) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(345 80% 98%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(345 75% 62%) 0%, hsl(355 80% 65%) 100%);
+
+    --shadow-soft: 0 8px 30px -10px hsl(345 60% 70% / 0.18);
+    --shadow-card: 0 10px 40px -15px hsl(220 40% 50% / 0.12);
+    --shadow-glow: 0 20px 60px -20px hsl(345 75% 62% / 0.45);
+
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-soft {
+    background: var(--gradient-soft);
+  }
+
+  .gradient-cta {
+    background: var(--gradient-cta);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
