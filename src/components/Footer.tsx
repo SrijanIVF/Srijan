@@ -115,14 +115,24 @@ const Footer = () => {
           </div>
           <div>
             <h4 className="font-semibold mb-4 text-sm">Centres</h4>
+
             <ul className="space-y-2 text-sm text-white/80">
-              {["Delhi", "Indirapuram"].map((l) => (
-                <li key={l}>
+              {[
+                {
+                  name: "Delhi",
+                  url: "/best-ivf-centre-delhi",
+                },
+                {
+                  name: "Indirapuram",
+                  url: "/best-ivf-centre-indirapuram",
+                },
+              ].map((item) => (
+                <li key={item.name}>
                   <a
-                    href="/our-centres"
+                    href={item.url}
                     className="hover:text-white transition flex items-center gap-2"
                   >
-                    <span>»</span> {l}
+                    <span>»</span> {item.name}
                   </a>
                 </li>
               ))}
@@ -150,9 +160,8 @@ const Footer = () => {
         </div>
 
         <div className="container mx-auto border-t border-white/20 mt-12 pt-6 text-center text-sm text-white/70 pb-20 md:pb-0 px-4">
-
           <p className="mb-3">
-            © {new Date().getFullYear()} Srijan IVF. All rights reserved.
+            © 2021-26 Srijan IVF. All rights reserved.
           </p>
 
           <p className="text-xs md:text-sm leading-relaxed max-w-5xl mx-auto text-white/80">
