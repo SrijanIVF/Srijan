@@ -26,7 +26,7 @@ const ContactPage = () => {
   return (
     <>
       <Navbar />
-      <section className="relative w-full h-[60vh] md:h-[75vh] flex items-center justify-center text-center">
+      {/* <section className="relative w-full h-[60vh] md:h-[75vh] flex items-center justify-center text-center">
         <img
           src={bannerImg}
           alt="Contact Srijan IVF"
@@ -47,7 +47,7 @@ const ContactPage = () => {
             We’re here to support you at every step of your fertility journey. Reach out to our experts today.
           </p>
         </div>
-      </section>
+      </section> */}
       <Appointments />
 
       <section className="w-full h-[450px]">

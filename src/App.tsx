@@ -39,6 +39,7 @@ import CaesareanSection from "./pages/treatments/caesarean-section.tsx";
 import HighRiskPregnancy from "./pages/treatments/high-risk-pregnancy.tsx"
 import LowRiskPregnancy from "./pages/treatments/low-risk-pregnancy.tsx";
 import NormalDelivery from "./pages/treatments/normal-delivery.tsx";
+import BestIvfCentreDelhi from "./pages/best-ivf-centre-delhi.tsx";
 
 const queryClient = new QueryClient();
 
@@ -85,6 +86,7 @@ const App = () => (
           <Route path="/treatments/high-risk-pregnancy" element={<HighRiskPregnancy/>} />
           <Route path="/treatments/low-risk-pregnancy" element={<LowRiskPregnancy/>} />
           <Route path="/treatments/normal-delivery" element={<NormalDelivery />} />
+          <Route path="/best-ivf-centre-delhi" element={<BestIvfCentreDelhi />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

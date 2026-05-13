@@ -155,7 +155,7 @@ For those seeking fertility treatment in Srinagar, Srijan IVF is the best choice
 
 Kidney and Urological Diseases Research Centre, Sonwar Bagh, opposite Amar Singh Club, Srinagar 190001.
 
-Phone No.: +91-8851762433
+Phone No.: +91-971 174 8080
 
 Facebook👉 https://www.facebook.com/srijanivfcentre
 

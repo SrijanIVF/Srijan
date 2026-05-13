@@ -77,6 +77,8 @@ const Navbar = () => {
 
   const [showDoctors, setShowDoctors] = useState(false);
 
+  const [showCentres, setShowCentres] = useState(false);
+
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -92,18 +94,42 @@ const Navbar = () => {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled
-        ? "bg-white/90 backdrop-blur-lg shadow-md"
-        : "bg-transparent"
+          ? "bg-white/90 backdrop-blur-lg shadow-md"
+          : "bg-transparent"
         }`}
     >
-      <nav className="container mx-auto flex items-center justify-between py-4 px-4">
+      <nav className="container mx-auto flex items-center justify-between py-3 px-4">
         <Link to="/" className="flex items-center">
           <img
             src={logo}
             alt="Srijan IVF"
-            className="h-10 sm:h-12 w-auto object-contain"
+            className="h-9 sm:h-11 w-auto object-contain"
           />
         </Link>
+
+        <div className="flex items-center gap-3 lg:hidden">
+          <a
+            href="tel:+919711748080"
+            className="flex items-center gap-1.5 bg-pink-50 border border-pink-100 px-3 py-2 rounded-full"
+          >
+            <Phone className="h-4 w-4 text-pink-600" />
+
+            <span className="text-sm font-semibold text-pink-600 leading-none">
+              9711748080
+            </span>
+          </a>
+
+          <button
+            className="h-11 w-11 flex items-center justify-center rounded-xl border border-gray-200 bg-white shadow-sm"
+            onClick={() => setOpen(!open)}
+          >
+            {open ? (
+              <X className="h-5 w-5 text-gray-700" />
+            ) : (
+              <Menu className="h-5 w-5 text-gray-700" />
+            )}
+          </button>
+        </div>
 
         <ul className="hidden lg:flex items-center gap-8">
           {links.map((l) => (
@@ -115,21 +141,18 @@ const Navbar = () => {
                   </span>
 
                   <div className="absolute left-0 top-full mt-3 w-[320px] bg-white border border-pink-100 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-
                     {treatmentCategories.map((category) => (
                       <div
                         key={category.title}
                         className="relative group/submenu"
                       >
-                        <div
-                          className="flex items-center justify-between px-5 py-4 text-sm font-semibold text-gray-700 hover:bg-pink-50 hover:text-pink-600 transition-all cursor-default"
-                        >
+                        <div className="flex items-center justify-between px-5 py-4 text-sm font-semibold text-gray-700 hover:bg-pink-50 hover:text-pink-600 transition-all cursor-default">
                           {category.title}
 
                           <ChevronRight className="h-4 w-4" />
                         </div>
-                        <div className="absolute left-full top-0 w-[280px] bg-white border border-pink-100 rounded-2xl shadow-2xl opacity-0 invisible group-hover/submenu:opacity-100 group-hover/submenu:visible transition-all duration-300 overflow-hidden">
 
+                        <div className="absolute left-full top-0 w-[280px] bg-white border border-pink-100 rounded-2xl shadow-2xl opacity-0 invisible group-hover/submenu:opacity-100 group-hover/submenu:visible transition-all duration-300 overflow-hidden">
                           {category.items.map((item) => (
                             <Link
                               key={item.slug}
@@ -139,11 +162,9 @@ const Navbar = () => {
                               {item.name}
                             </Link>
                           ))}
-
                         </div>
                       </div>
                     ))}
-
                   </div>
                 </>
               ) : l.label === "Doctors" ? (
@@ -153,7 +174,6 @@ const Navbar = () => {
                   </span>
 
                   <div className="absolute left-0 top-full mt-3 w-64 bg-white border border-pink-100 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden">
-
                     <Link
                       to="/doctor/pallavi-singh"
                       className="block px-5 py-4 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600"
@@ -167,7 +187,28 @@ const Navbar = () => {
                     >
                       Dr. Santosh Kumar Arjun
                     </Link>
+                  </div>
+                </>
+              ) : l.label === "Centre" ? (
+                <>
+                  <span className="text-sm font-medium text-gray-700 hover:text-pink-600 cursor-pointer transition-colors">
+                    Centre
+                  </span>
 
+                  <div className="absolute left-0 top-full mt-3 w-64 bg-white border border-pink-100 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden">
+                    <Link
+                      to="/best-ivf-centre-delhi"
+                      className="block px-5 py-4 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600"
+                    >
+                      Delhi
+                    </Link>
+
+                    <Link
+                      to="/best-ivf-centre-indirapuram"
+                      className="block px-5 py-4 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 border-t border-pink-100"
+                    >
+                      Indirapuram
+                    </Link>
                   </div>
                 </>
               ) : (
@@ -184,26 +225,18 @@ const Navbar = () => {
 
         <div className="hidden lg:flex items-center gap-3">
           <a
-            href="tel:+9197117 48080"
+            href="tel:+919711748080"
             className="flex items-center gap-2 bg-pink-600 hover:bg-pink-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-md transition-all duration-300"
           >
             <Phone className="h-4 w-4" />
-            97117 48080
+            971 174 8080
           </a>
         </div>
-
-        <button
-          className="lg:hidden p-2 rounded-xl hover:bg-pink-50"
-          onClick={() => setOpen(!open)}
-        >
-          {open ? <X /> : <Menu />}
-        </button>
       </nav>
 
       {open && (
         <div className="lg:hidden bg-white border-t border-pink-100 max-h-[90vh] overflow-y-auto">
           <div className="container mx-auto py-4 px-4">
-
             <Link
               to="/"
               onClick={() => setOpen(false)}
@@ -231,8 +264,7 @@ const Navbar = () => {
 
               {showTreatments && (
                 <div className="mt-2 space-y-3">
-
-                  {treatmentCategories.map((category, index) => (
+                  {treatmentCategories.map((category) => (
                     <div
                       key={category.title}
                       className="border border-pink-100 rounded-2xl overflow-hidden"
@@ -252,16 +284,15 @@ const Navbar = () => {
                         </span>
 
                         <ChevronDown
-                          className={`h-4 w-4 transition-transform ${openCategory === category.slug
-                            ? "rotate-180"
-                            : ""
+                          className={`h-4 w-4 transition-transform ${openCategory === category.title
+                              ? "rotate-180"
+                              : ""
                             }`}
                         />
                       </button>
 
                       {openCategory === category.title && (
                         <div className="bg-white py-2">
-
                           {category.items.map((item) => (
                             <Link
                               key={item.slug}
@@ -272,12 +303,10 @@ const Navbar = () => {
                               {item.name}
                             </Link>
                           ))}
-
                         </div>
                       )}
                     </div>
                   ))}
-
                 </div>
               )}
             </div>
@@ -301,7 +330,6 @@ const Navbar = () => {
 
               {showDoctors && (
                 <div className="mt-2 border border-pink-100 rounded-2xl overflow-hidden">
-
                   <Link
                     to="/doctor/pallavi-singh"
                     onClick={() => setOpen(false)}
@@ -317,18 +345,47 @@ const Navbar = () => {
                   >
                     Dr. Santosh Kumar Arjun
                   </Link>
-
                 </div>
               )}
             </div>
 
-            <Link
-              to="/centre"
-              onClick={() => setOpen(false)}
-              className="block py-3"
-            >
-              Centre
-            </Link>
+            <div className="border-b border-pink-100 py-2">
+              <button
+                onClick={() =>
+                  setShowCentres(!showCentres)
+                }
+                className="w-full flex items-center justify-between py-3"
+              >
+                <span className="text-sm font-semibold text-gray-800">
+                  Centre
+                </span>
+
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform ${showCentres ? "rotate-180" : ""
+                    }`}
+                />
+              </button>
+
+              {showCentres && (
+                <div className="mt-2 border border-pink-100 rounded-2xl overflow-hidden">
+                  <Link
+                    to="/best-ivf-centre-delhi"
+                    onClick={() => setOpen(false)}
+                    className="block px-5 py-4 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600"
+                  >
+                    Delhi
+                  </Link>
+
+                  <Link
+                    to="/best-ivf-centre-indirapuram"
+                    onClick={() => setOpen(false)}
+                    className="block px-5 py-4 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 border-t border-pink-100"
+                  >
+                    Indirapuram
+                  </Link>
+                </div>
+              )}
+            </div>
 
             <Link
               to="/testimonials"
@@ -353,17 +410,6 @@ const Navbar = () => {
             >
               Contact Us
             </Link>
-
-            <div className="pt-5">
-              <a
-                href="tel:+9197117 48080"
-                className="flex items-center justify-center gap-2 bg-pink-600 hover:bg-pink-700 text-white px-5 py-3 rounded-full text-sm font-semibold transition-all duration-300"
-              >
-                <Phone className="h-4 w-4" />
-                97117 48080
-              </a>
-            </div>
-
           </div>
         </div>
       )}

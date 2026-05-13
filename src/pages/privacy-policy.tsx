@@ -9,8 +9,7 @@ const PrivacyPolicy = () => {
     <>
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative w-full h-[60vh] flex items-center justify-center text-center">
+      {/* <section className="relative w-full h-[60vh] flex items-center justify-center text-center">
         <img
           src={aboutImg}
           alt="Privacy Policy"
@@ -24,9 +23,8 @@ const PrivacyPolicy = () => {
             Privacy Policy
           </h1>
         </div>
-      </section>
+      </section> */}
 
-      {/* Introduction */}
       <section className="py-14 md:py-20 px-4 md:px-10 bg-white">
         <div className="max-w-6xl mx-auto">
 
@@ -88,7 +86,6 @@ const PrivacyPolicy = () => {
         </div>
       </section>
 
-      {/* Information Collected */}
       <section className="py-10 md:py-14 px-4 md:px-10 bg-pink-50">
         <div className="max-w-6xl mx-auto">
 
@@ -113,7 +110,6 @@ const PrivacyPolicy = () => {
         </div>
       </section>
 
-      {/* Use of Information */}
       <section className="py-14 md:py-20 px-4 md:px-10 bg-white">
         <div className="max-w-6xl mx-auto">
 
@@ -166,7 +162,6 @@ const PrivacyPolicy = () => {
         </div>
       </section>
 
-      {/* Sharing + Choices */}
       <section className="py-10 md:py-14 px-4 md:px-10 bg-pink-50">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6">
 
@@ -250,11 +245,9 @@ const PrivacyPolicy = () => {
         </div>
       </section>
 
-      {/* Security + Contact */}
       <section className="py-14 md:py-20 px-4 md:px-10 bg-white">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-14">
 
-          {/* Security */}
           <div>
 
             <p className="text-xs font-semibold tracking-widest uppercase text-pink-400 mb-3">
@@ -274,7 +267,6 @@ const PrivacyPolicy = () => {
             </p>
           </div>
 
-          {/* Contact */}
           <div>
 
             <p className="text-xs font-semibold tracking-widest uppercase text-pink-400 mb-3">
@@ -300,11 +292,9 @@ const PrivacyPolicy = () => {
         </div>
       </section>
 
-      {/* Additional Notes + Disclaimer */}
       <section className="py-10 md:py-14 px-4 md:px-10 bg-pink-50">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6">
 
-          {/* Additional Notes */}
           <div className="bg-white border border-pink-100 rounded-3xl p-8 hover:shadow-lg transition-all duration-300">
 
             <p className="text-xs font-semibold tracking-widest uppercase text-pink-400 mb-3">
@@ -332,7 +322,6 @@ const PrivacyPolicy = () => {
             </ul>
           </div>
 
-          {/* Disclaimer */}
           <div className="bg-white border border-pink-100 rounded-3xl p-8 hover:shadow-lg transition-all duration-300">
 
             <p className="text-xs font-semibold tracking-widest uppercase text-pink-400 mb-3">

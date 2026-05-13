@@ -279,7 +279,7 @@ const BlogDetailPage = () => {
                       onClick={() => setSubmitted(false)}
                       className="mt-4 bg-pink-500 hover:bg-pink-600 text-white text-xs font-semibold px-5 py-2 rounded-full transition-colors"
                     >
-                      Call us : +91 97117 48080
+                      Call us : +91 971 174 8080
                     </button>
 
                   </div>

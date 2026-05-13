@@ -91,7 +91,7 @@ const Hero = () => {
               </Button>
 
               <Button variant="outline" size="xl" asChild>
-                <a href="tel:+9197117 48080">
+                <a href="tel:+91971 174 8080">
                   <Phone className="mr-1 h-5 w-5" />
                   Call Now
                 </a>
@@ -401,10 +401,10 @@ const HeroForm = ({
         </p>
 
         <a
-          href="tel:+9197117 48080"
+          href="tel:+91971 174 8080"
           className="block w-full bg-primary text-white py-2 rounded-xl text-sm font-medium hover:opacity-90 transition"
         >
-          Call Now: 97117 48080
+          Call Now: 971 174 8080
         </a>
       </div>
     );

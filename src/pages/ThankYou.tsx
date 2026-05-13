@@ -14,7 +14,7 @@ const ThankYou = () => (
       </p>
       <div className="mt-8 flex flex-wrap justify-center gap-3">
         <Button variant="cta" size="lg" asChild>
-          <a href="tel:+9197117 48080"><Phone className="mr-2 h-4 w-4" /> Call Us Now</a>
+          <a href="tel:+91971 174 8080"><Phone className="mr-2 h-4 w-4" /> Call Us Now</a>
         </Button>
         <Button variant="outline" size="lg" asChild>
           <Link to="/"><ArrowLeft className="mr-2 h-4 w-4" /> Back to Home</Link>

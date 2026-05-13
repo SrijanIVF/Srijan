@@ -141,7 +141,7 @@ With its proven track record of success, affordable pricing, and patient-centred
 
 Heiwel Hospital, National Highway 56, Airport Road, near Sant Atulanand, Gilat Bazar, Chotta Chuppepur, Varanasi, Uttar Pradesh 221002.
 
-Phone No.: +91-8851762433
+Phone No.: +91-971 174 8080
 
 Facebook👉 https://www.facebook.com/srijanivfcentre
 
