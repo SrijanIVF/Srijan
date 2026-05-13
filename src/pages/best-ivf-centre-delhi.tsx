@@ -7,7 +7,8 @@ import { useState } from "react";
 import doc1 from "@/assets/Dr.-Pallavisingh.webp";
 import doc2 from "@/assets/Dr.-santosh.webp";
 import { Link } from "react-router-dom";
-
+import { useToast } from "@/hooks/use-toast";
+import LeadPopup from "@/components/LeadPopup";
 const doctors = [
     {
         img: doc1,
@@ -38,7 +39,7 @@ const doctors = [
 const whyUsCards = [
     {
         emoji: "🏅",
-        title: "20+ Years Experienced Doctors",
+        title: "23+ Years Experienced Doctors",
         desc: "Our team includes some of Delhi's finest infertility specialists with over two decades of experience handling both straightforward and complex infertility cases.",
     },
     {
@@ -113,9 +114,9 @@ const treatments = [
     },
     {
         emoji: "🤝",
-        name: "Donor Programme",
-        slug: "/treatments/donor-programme",
-        desc: "Comprehensive egg, sperm, and embryo donation services for couples where conventional treatment may not be the best path forward.",
+        name: "Male Infertility",
+        slug: "/treatments/male-infertility",
+        desc: "Male infertility is the inability of a man to achieve pregnancy with a fertile female partner after one year of trying.",
     },
     {
         emoji: "🩺",
@@ -131,15 +132,15 @@ const treatments = [
     },
     {
         emoji: "❄️",
-        name: "Cryopreservation",
+        name: "Blastocyst Culture",
         slug: "/treatments/blastocyst-culture",
         desc: "Advanced vitrification technique to freeze and preserve eggs, sperm, and embryos for future fertility treatment with excellent survival rates.",
     },
     {
         emoji: "🩻",
-        name: "HSG Test",
+        name: "Semen Analysis",
         slug: "/treatments/semen-analysis",
-        desc: "An X-ray procedure using contrast dye to assess the condition of the fallopian tubes and uterine cavity, a key diagnostic step in infertility evaluation.",
+        desc: "A comprehensive test to evaluate sperm count, motility, and morphology, essential for diagnosing male infertility.",
     },
 ];
 
@@ -164,15 +165,6 @@ const bookingSteps = [
         title: "Begin Your Journey",
         desc: "Visit Srijan IVF Delhi and start your personalised parenthood journey with our caring and experienced team.",
     },
-];
-
-const locations = [
-    { name: "Delhi", active: true },
-    { name: "Noida", active: false },
-    { name: "Gurgaon", active: false },
-    { name: "Lucknow", active: false },
-    { name: "Kanpur", active: false },
-    { name: "Patna", active: false },
 ];
 
 const faqs = [
@@ -202,61 +194,237 @@ const faqs = [
     },
 ];
 const BestIVFCentreDelhi = () => {
+    const [showPopup, setShowPopup] = useState(false);
+
+
     const [openFaq, setOpenFaq] = useState(null);
+
+    const { toast } = useToast();
+
+    const [loading, setLoading] = useState(false);
+
+    const [form, setForm] = useState({
+        name: "",
+        phone: "",
+        treatment: "",
+    });
+
+    const [errors, setErrors] = useState({
+        name: "",
+        phone: "",
+        treatment: "",
+        success: "",
+    });
+
+    const handleSubmit = async (
+        e: React.FormEvent
+    ) => {
+
+        e.preventDefault();
+
+        const newErrors = {
+            name: "",
+            phone: "",
+            treatment: "",
+            success: "",
+        };
+
+        if (!form.name.trim()) {
+
+            newErrors.name =
+                "Name is required";
+
+        } else if (
+            !/^[A-Za-z\s]+$/.test(form.name)
+        ) {
+
+            newErrors.name =
+                "Only letters are allowed";
+        }
+
+        if (!form.phone) {
+
+            newErrors.phone =
+                "Phone number is required";
+
+        } else if (
+            !/^[6789]/.test(form.phone)
+        ) {
+
+            newErrors.phone =
+                "Must start with 6,7,8 or 9";
+
+        } else if (
+            form.phone.length !== 10
+        ) {
+
+            newErrors.phone =
+                "Phone number must be 10 digits";
+        }
+
+        if (!form.treatment) {
+
+            newErrors.treatment =
+                "Please select treatment";
+        }
+
+        if (
+            newErrors.name ||
+            newErrors.phone ||
+            newErrors.treatment
+        ) {
+
+            setErrors(newErrors);
+
+            return;
+        }
+
+        setErrors({
+            name: "",
+            phone: "",
+            treatment: "",
+            success: "",
+        });
+
+        setLoading(true);
+
+        setErrors({
+            name: "",
+            phone: "",
+            treatment: "",
+            success:
+                "Thank you! Our fertility team will call you shortly 💖",
+        });
+
+        const payload = { ...form };
+
+        setForm({
+            name: "",
+            phone: "",
+            treatment: "",
+        });
+
+        setLoading(false);
+
+        try {
+
+            const formData = new FormData();
+
+            formData.append(
+                "name",
+                payload.name
+            );
+
+            formData.append(
+                "mobile",
+                payload.phone
+            );
+
+            formData.append(
+                "source_name",
+                "Delhi Banner Form"
+            );
+
+            formData.append(
+                "city_name",
+                "Delhi"
+            );
+
+            formData.append(
+                "treatment",
+                payload.treatment
+            );
+
+            fetch(
+                "https://api.srijanivfcentre.com/api/v1/lead/generate-lead/",
+                {
+                    method: "POST",
+                    body: formData,
+                }
+            ).catch(console.log);
+
+        } catch (err) {
+
+            console.log(err);
+        }
+    };
 
     return (
         <>
+            {showPopup && <LeadPopup onClose={() => setShowPopup(false)} />}
             <Navbar />
+            <section className="relative overflow-hidden bg-gradient-to-br from-white via-pink-50 to-rose-100 pt-24 md:pt-28 pb-10 md:pb-8 min-h-auto lg:min-h-[620px] flex items-center">
 
-            <section className="relative overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24">
-                <img
-                    src={aboutImg}
-                    alt="Best IVF Centre in Delhi"
-                    className="absolute inset-0 w-full h-full object-cover"
-                />
+                <div className="absolute top-0 left-0 w-80 h-80 bg-pink-200/40 rounded-full blur-3xl"></div>
 
-                <div className="absolute inset-0 bg-gradient-to-r from-[#2b0b18]/90 via-[#3b1020]/80 to-[#611638]/60" />
+                <div className="absolute bottom-0 right-0 w-96 h-96 bg-rose-200/40 rounded-full blur-3xl"></div>
 
-                <div className="relative z-10 max-w-7xl mx-auto px-4">
-                    <div className="grid lg:grid-cols-[1.1fr_420px] gap-10 items-center">
+                <div className="absolute top-20 right-20 w-32 h-32 rounded-[30px] rotate-12 bg-pink-100 border border-pink-200"></div>
 
-                        <div className="text-white">
-                            <p className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-5 py-2 text-xs md:text-sm font-semibold tracking-wide text-pink-200 mb-6">
-                                ✦ Trusted by 10,000+ Parents
-                            </p>
+                <div className="absolute bottom-20 left-10 w-24 h-24 rounded-full bg-white shadow-2xl"></div>
 
-                            <h1 className="text-4xl md:text-6xl leading-tight font-bold mb-6">
+                <div className="max-w-7xl mx-auto px-4 relative z-10 w-full">
+
+                    <div className="grid lg:grid-cols-[1fr_380px] gap-10 lg:gap-14 items-center">
+
+                        <div>
+
+                            <span className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-xl text-pink-700 border border-pink-200 rounded-full px-5 py-2 text-sm font-semibold mb-6 shadow-sm">
+                                ✦ Trusted IVF Centre in Delhi
+                            </span>
+
+                            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.15] text-gray-900 mb-5 md:mb-6">
                                 Best IVF Centre <br />
-                                in <span className="text-pink-400">Delhi </span>
+                                in <span className="text-pink-600">Delhi</span>
                             </h1>
 
-                            <p className="text-base md:text-lg text-white/80 leading-relaxed max-w-2xl mb-8">
-                                Struggling with infertility? You are not alone. Millions of couples in India face this journey. At Srijan IVF, we combine 20+ years of expertise with cutting-edge ART technology to personalise every step of your parenthood journey — from consultation to your baby's first cry.
+                            <p className="text-gray-600 text-[15px] sm:text-base md:text-lg leading-relaxed max-w-2xl mb-7 md:mb-8">
+                                Struggling with infertility? You are not alone. Millions of couples in India face this journey. At Srijan IVF, we combine 23+ years of expertise with cutting-edge ART technology to personalise every step of your parenthood journey — from consultation to your baby's first cry.
+
+
                             </p>
 
-                            {/* <div className="flex flex-wrap gap-4">
-                                <a
-                                    href="tel:+919711748080"
-                                    className="bg-pink-600 hover:bg-pink-700 text-white px-7 py-4 rounded-2xl text-sm font-semibold transition-all duration-300 shadow-xl"
-                                >
-                                    Call Now
-                                </a>
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-8 md:mb-10">
 
-                                <a
-                                    href="https://wa.me/919711748080"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white px-7 py-4 rounded-2xl text-sm font-semibold transition-all duration-300"
-                                >
-                                    WhatsApp Us
-                                </a>
-                            </div> */}
+                                <div className="bg-white border border-pink-100 rounded-2xl px-4 py-4 shadow-sm text-center">
+                                    <p className="text-2xl font-bold text-pink-600">
+                                        23+
+                                    </p>
+
+                                    <p className="text-sm text-gray-500">
+                                        Years Experience
+                                    </p>
+                                </div>
+
+                                <div className="bg-white border border-pink-100 rounded-2xl px-4 py-4 shadow-sm text-center">
+                                    <p className="text-2xl font-bold text-pink-600">
+                                        18K+
+                                    </p>
+
+                                    <p className="text-sm text-gray-500">
+                                        IVF Babies Delivered
+                                    </p>
+                                </div>
+
+                                <div className="bg-white border border-pink-100 rounded-2xl px-4 py-4 shadow-sm text-center">
+                                    <p className="text-2xl font-bold text-pink-600">
+                                        90%
+                                    </p>
+
+                                    <p className="text-sm text-gray-500">
+                                        IVF Success Rate
+                                    </p>
+                                </div>
+                            </div>
                         </div>
+                        <form
+                            onSubmit={handleSubmit}
+                            className="w-full max-w-full sm:max-w-[420px] lg:max-w-[340px] mx-auto lg:ml-auto bg-white/95 backdrop-blur-xl border border-pink-100 rounded-[24px] md:rounded-[28px] shadow-xl overflow-hidden"
+                        >
 
-                        <div className="bg-white rounded-[28px] shadow-2xl border border-pink-100 overflow-hidden max-w-[360px] mx-auto w-full">
+                            <div className="bg-gradient-to-r from-pink-500 to-rose-500 px-6 py-5 text-white text-center">
 
-                            <div className="bg-gradient-to-r from-pink-600 to-rose-500 px-6 py-5 text-white text-center">
-                                <p className="text-[11px] font-medium text-white/80 mb-1 uppercase tracking-wider">
+                                <p className="uppercase tracking-[2px] text-[10px] text-white/80 mb-1">
                                     Free Consultation
                                 </p>
 
@@ -265,48 +433,142 @@ const BestIVFCentreDelhi = () => {
                                 </h3>
                             </div>
 
-                            <div className="p-5">
-                                <form className="space-y-3">
+                            <div className="p-4 sm:p-5 space-y-3">
+                                <div>
+
                                     <input
                                         type="text"
                                         placeholder="Your Name"
-                                        className="w-full h-12 rounded-xl border border-pink-100 bg-pink-50/40 px-4 text-sm outline-none focus:border-pink-400 transition-all"
+                                        value={form.name}
+                                        onChange={(e) => {
+
+                                            const value =
+                                                e.target.value;
+
+                                            if (
+                                                /^[A-Za-z\s]*$/.test(
+                                                    value
+                                                )
+                                            ) {
+
+                                                setForm({
+                                                    ...form,
+                                                    name: value,
+                                                });
+                                            }
+                                        }}
+                                        className="w-full h-11 rounded-xl border border-pink-100 bg-pink-50 px-4 text-sm outline-none focus:border-pink-400"
                                     />
+
+                                    {errors.name && (
+                                        <p className="text-red-500 text-xs mt-1">
+                                            {errors.name}
+                                        </p>
+                                    )}
+                                </div>
+                                <div>
 
                                     <input
                                         type="tel"
                                         placeholder="Phone Number"
-                                        className="w-full h-12 rounded-xl border border-pink-100 bg-pink-50/40 px-4 text-sm outline-none focus:border-pink-400 transition-all"
+                                        maxLength={10}
+                                        value={form.phone}
+                                        onChange={(e) => {
+
+                                            const value =
+                                                e.target.value
+                                                    .replace(
+                                                        /\D/g,
+                                                        ""
+                                                    )
+                                                    .slice(
+                                                        0,
+                                                        10
+                                                    );
+
+                                            setForm({
+                                                ...form,
+                                                phone: value,
+                                            });
+                                        }}
+                                        className="w-full h-11 rounded-xl border border-pink-100 bg-pink-50 px-4 text-sm outline-none focus:border-pink-400"
                                     />
 
-                                    <select aria-label="Select Treatment" className="w-full h-12 rounded-xl border border-pink-100 bg-pink-50/40 px-4 text-sm outline-none focus:border-pink-400 transition-all text-gray-600">
-                                        <option>Select Treatment</option>
-                                        <option>IVF Treatment</option>
-                                        <option>IUI Treatment</option>
-                                        <option>ICSI Treatment</option>
-                                        <option>Male Infertility</option>
+                                    {errors.phone && (
+                                        <p className="text-red-500 text-xs mt-1">
+                                            {errors.phone}
+                                        </p>
+                                    )}
+                                </div>
+
+                                <div>
+
+                                    <select
+                                        aria-label="select treatment"
+                                        value={form.treatment}
+                                        onChange={(e) =>
+                                            setForm({
+                                                ...form,
+                                                treatment:
+                                                    e.target
+                                                        .value,
+                                            })
+                                        }
+                                        className="w-full h-11 rounded-xl border border-pink-100 bg-pink-50 px-4 text-sm outline-none focus:border-pink-400 text-gray-600"
+                                    >
+                                        <option value="">
+                                            Select Treatment
+                                        </option>
+
+                                        <option>
+                                            IVF Treatment
+                                        </option>
+
+                                        <option>
+                                            IUI Treatment
+                                        </option>
+
+                                        <option>
+                                            Altruistic Surrogacy
+                                        </option>
+
                                     </select>
 
-                                    <button
-                                        type="submit"
-                                        className="w-full h-12 rounded-xl bg-gradient-to-r from-pink-600 to-rose-500 hover:from-pink-700 hover:to-rose-600 text-white text-sm font-semibold transition-all duration-300"
-                                    >
-                                        Request Callback
-                                    </button>
-                                </form>
+                                    {errors.treatment && (
+                                        <p className="text-red-500 text-xs mt-1">
+                                            {errors.treatment}
+                                        </p>
+                                    )}
+                                </div>
+
+                                <button
+                                    type="submit"
+                                    disabled={loading}
+                                    className="w-full h-11 rounded-xl bg-gradient-to-r from-pink-600 to-rose-500 active:scale-[0.98] md:hover:scale-[1.02] transition-all duration-300 text-white text-sm font-semibold shadow-lg"
+                                >
+                                    {loading
+                                        ? "Submitting..."
+                                        : "Request Callback"}
+                                </button>
+
+                                {errors.success && (
+                                    <div className="bg-green-50 border border-green-200 text-green-700 text-xs rounded-xl px-4 py-3 text-center">
+                                        {errors.success}
+                                    </div>
+                                )}
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </section>
 
-            <section className="py-20 px-6 bg-white">
-                <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+            <section className="py-14 md:py-20 px-4 sm:px-6 bg-white">
+                <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 md:gap-14 items-center">
                     <div>
                         <p className="text-xs font-semibold tracking-widest uppercase text-pink-400 mb-3">
                             About Srijan IVF Delhi
                         </p>
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-snug">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-5 md:mb-6 leading-snug">
                             Best IVF Centre in Delhi:<br />
                             <span className="text-pink-600">Who We Are</span>
                         </h2>
@@ -332,7 +594,7 @@ const BestIVFCentreDelhi = () => {
                             <img
                                 src={clinicImg}
                                 alt="Srijan IVF Clinic Delhi"
-                                className="w-full max-w-md object-cover rounded-[120px_120px_120px_40px] border-[6px] border-pink-200 shadow-xl"
+                                className="w-full max-w-[280px] sm:max-w-sm md:max-w-md object-cover rounded-[80px_80px_80px_30px] md:rounded-[120px_120px_120px_40px] border-[5px] md:border-[6px] border-pink-200 shadow-xl"
                             />
                         </div>
                     </div>
@@ -368,7 +630,7 @@ const BestIVFCentreDelhi = () => {
                 </div>
             </section>
 
-            <section className="py-20 px-6 bg-white">
+            <section className="py-14 md:py-20 px-4 sm:px-6 bg-white">
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-12">
                         <p className="text-xs font-semibold tracking-widest uppercase text-pink-400 mb-2">
@@ -381,7 +643,7 @@ const BestIVFCentreDelhi = () => {
                             We are more than a fertility clinic — we are your partners in building the family you have always dreamed of.
                         </p>
                     </div>
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
                         {whyUsCards.map((c, i) => (
                             <div
                                 key={i}
@@ -414,13 +676,13 @@ const BestIVFCentreDelhi = () => {
                         Our expert fertility specialists bring decades of combined experience in reproductive medicine, ensuring you receive world-class care at every stage of your journey.
                     </p>
 
-                    <div className="grid sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6 max-w-5xl mx-auto">
                         {doctors.map((d, i) => (
                             <div
                                 key={i}
                                 className="bg-white border border-pink-100 rounded-3xl overflow-hidden hover:shadow-xl hover:border-pink-300 transition-all duration-300"
                             >
-                                <div className="h-72 bg-pink-50 overflow-hidden">
+                                <div className="h-[280px] sm:h-72 bg-pink-50 overflow-hidden">
                                     <img
                                         src={d.img}
                                         alt={d.name}
@@ -428,8 +690,8 @@ const BestIVFCentreDelhi = () => {
                                     />
                                 </div>
 
-                                <div className="p-6">
-                                    <h3 className="text-2xl font-bold text-gray-900 mb-1">
+                                <div className="p-4 sm:p-6">
+                                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1">
                                         {d.name}
                                     </h3>
 
@@ -471,7 +733,7 @@ const BestIVFCentreDelhi = () => {
                                         </p>
                                     </div>
 
-                                    <div className="flex gap-3">
+                                    <div className="flex flex-col sm:flex-row gap-3">
                                         <a
                                             href="tel:+91971 174 8080"
                                             className="flex-1 bg-pink-600 hover:bg-pink-700 text-white text-sm font-semibold py-3 rounded-xl transition-colors text-center"
@@ -493,7 +755,7 @@ const BestIVFCentreDelhi = () => {
                 </div>
             </section>
 
-            <section className="py-20 px-6 bg-white">
+            <section className="py-14 md:py-20 px-4 sm:px-6 bg-white">
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-4">
                         <p className="text-xs font-semibold tracking-widest uppercase text-pink-400 mb-2">
@@ -507,7 +769,7 @@ const BestIVFCentreDelhi = () => {
                         We offer a full spectrum of assisted reproductive technologies and fertility treatments under one roof.
                     </p>
 
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
                         {treatments.map((t, i) => (
                             <div
                                 key={i}
@@ -542,7 +804,7 @@ const BestIVFCentreDelhi = () => {
                         Booking a consultation at Srijan IVF is simple, quick, and completely stress-free. Our team is here to guide you every step of the way.
                     </p>
 
-                    <div className="relative flex flex-col md:flex-row justify-between items-start gap-10">
+                    <div className="relative flex flex-col md:flex-row justify-between items-center md:items-start gap-8 md:gap-10">
                         <div className="hidden md:block absolute top-8 left-[12%] right-[12%] h-0.5 bg-pink-200" />
                         {bookingSteps.map((s, i) => (
                             <div key={i} className="relative flex-1 flex flex-col items-center text-center">
@@ -550,14 +812,14 @@ const BestIVFCentreDelhi = () => {
                                     {s.num}
                                 </div>
                                 <h4 className="font-bold text-gray-900 mb-2 text-sm">{s.title}</h4>
-                                <p className="text-xs text-gray-500 leading-relaxed max-w-[160px]">{s.desc}</p>
+                                <p className="text-xs text-gray-500 leading-relaxed max-w-[220px] md:max-w-[160px]">{s.desc}</p>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* <section className="py-20 px-6 bg-white">
+            {/* <section className="py-14 md:py-20 px-4 sm:px-6 bg-white">
                 <div className="max-w-6xl mx-auto">
                     <p className="text-xs font-semibold tracking-widest uppercase text-pink-400 mb-2">
                         Our Locations
@@ -595,42 +857,112 @@ const BestIVFCentreDelhi = () => {
                 </div>
             </section> */}
 
-            <section className="py-20 px-6 bg-pink-50">
-                <div className="max-w-3xl mx-auto text-center">
-                    <p className="text-xs font-semibold tracking-widest uppercase text-pink-400 mb-2">
-                        FAQ
-                    </p>
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-                        Frequently Asked Questions
-                    </h2>
-                    <p className="text-gray-500 mb-12">
-                        Get answers to the most common questions about IVF treatment in Delhi.
-                    </p>
+            <section className="py-14 md:py-20 px-4 sm:px-6 bg-[#fafafa] overflow-hidden">
 
-                    <div className="flex flex-col gap-3 text-left">
+                <div className="max-w-6xl mx-auto">
+
+                    <div className="mb-10 md:mb-12">
+
+                        <p className="text-pink-500 text-xs sm:text-sm font-semibold tracking-[3px] uppercase mb-3">
+                            FAQs
+                        </p>
+
+                        <div className="w-14 h-[2px] bg-pink-500 mb-5"></div>
+
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+                            Frequently Asked Questions
+                        </h2>
+
+                    </div>
+
+                    <div className="flex flex-col gap-4">
+
                         {faqs.map((f, i) => (
-                            <div key={i} className="bg-white border border-pink-100 rounded-2xl overflow-hidden">
+
+                            <div
+                                key={i}
+                                className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:border-pink-200 transition-all duration-300"
+                            >
+
                                 <button
-                                    className="w-full flex items-center justify-between px-6 py-5 text-sm font-semibold text-gray-800 hover:bg-pink-50 transition-colors"
-                                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                                    onClick={() =>
+                                        setOpenFaq(openFaq === i ? null : i)
+                                    }
+                                    className="w-full flex items-start justify-between gap-4 px-4 sm:px-5 md:px-6 py-4 md:py-5 text-left"
                                 >
-                                    {f.q}
+
+                                    <span className="text-[14px] sm:text-[15px] md:text-[17px] leading-relaxed font-medium text-pink-500 pr-2">
+                                        {i + 1}. {f.q}
+                                    </span>
+
                                     <span
-                                        className={`text-pink-500 text-xl font-bold transition-transform duration-200 inline-block ${openFaq === i ? "rotate-45" : ""
+                                        className={`text-pink-500 text-2xl leading-none transition-transform duration-300 shrink-0 mt-0.5 ${openFaq === i
+                                            ? "rotate-45"
+                                            : ""
                                             }`}
                                     >
                                         +
                                     </span>
+
                                 </button>
+
                                 {openFaq === i && (
-                                    <div className="px-6 pb-5 text-sm text-gray-500 leading-relaxed border-t border-pink-50 pt-4">
-                                        Please contact our team or book a free consultation for a detailed personalised answer to this question.
+
+                                    <div className="border-t border-gray-200 px-4 sm:px-5 md:px-6 py-4 md:py-5 bg-white">
+
+                                        <p className="text-gray-600 text-sm sm:text-[14px] md:text-base leading-7">
+                                            {f.a}
+                                        </p>
+
                                     </div>
+
                                 )}
+
                             </div>
+
                         ))}
+
                     </div>
+
                 </div>
+
+            </section>
+
+            <section className="relative overflow-hidden bg-gradient-to-r from-pink-600 via-pink-500 to-rose-500 py-16 md:py-20 px-4 sm:px-6">
+
+                <div className="absolute inset-0 bg-black/5"></div>
+
+                <div className="max-w-5xl mx-auto relative z-10 text-center">
+
+                    <h2 className="text-2xl sm:text-4xl md:text-4xl font-bold text-white leading-tight mb-6">
+                        Begin Your Parenthood Journey Today
+                    </h2>
+
+                    <p className="text-white/90 text-sm sm:text-base md:text-lg leading-relaxed max-w-3xl mx-auto mb-10">
+                        Join 35,000+ happy families who trusted Srijan IVF Delhi for their fertility care.
+                        Book your free consultation now.
+                    </p>
+
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+
+                        <a
+                            href="tel:+919711748080"
+                            className="w-full sm:w-auto min-w-[260px] h-14 bg-white text-pink-600 rounded-xl px-8 flex items-center justify-center gap-3 text-base font-semibold shadow-lg hover:scale-[1.02] transition-all duration-300"
+                        >
+                            📞 Call 971 174 8080
+                        </a>
+
+                        <button
+                            onClick={() => setShowPopup(true)}
+                            className="w-full sm:w-auto min-w-[260px] h-14 border border-white/70 text-white rounded-xl px-8 text-base font-semibold hover:bg-white hover:text-pink-600 transition-all duration-300"
+                        >
+                            Book Free Consultation
+                        </button>
+
+                    </div>
+
+                </div>
+
             </section>
             <WhatsAppButton />
             <Footer />
