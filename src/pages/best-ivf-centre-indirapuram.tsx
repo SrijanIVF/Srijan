@@ -13,25 +13,25 @@ const doctors = [
     {
         img: doc1,
         name: "Dr. Pallavi Singh",
-        role: "Senior IVF Specialist – Delhi",
+        role: "Senior IVF Specialist – Indirapuram",
         exp: "23+ Years Experience",
         specialisation:
             "IVF | IUI | PCOS | Male Infertility | Female Infertility | ICSI | PICSI",
         qualification: "MBBS, DGO",
-        hospital: "Delhi Fertility Centre",
-        desc: "A Delhi-based infertility specialist empowering couples on their parenthood journey. Tackles complex cases with personalized care ensuring the well-being of both mother and child.",
+        hospital: "Indirapuram Fertility Centre",
+        desc: "A Indirapuram-based infertility specialist empowering couples on their parenthood journey. Tackles complex cases with personalized care ensuring the well-being of both mother and child.",
         profileUrl: "/doctor/pallavi-singh",
     },
     {
         img: doc2,
         name: "Dr. Santosh Kumar Arjun",
-        role: "Radiodiagnosis Specialist – Delhi",
+        role: "Radiodiagnosis Specialist – Indirapuram",
         exp: "15+ Years Experience",
         specialisation:
             "Radiodiagnosis | Medical Imaging | X-Ray | CT Scan | Ultrasound",
         qualification: "MBBS, DNB (Radiodiagnosis)",
         hospital: "GB Pant Hospital & LBS Hospital",
-        desc: "A seasoned radiologist in Delhi with expertise in diagnosing and interpreting medical images, ensuring the highest quality patient care through meticulous analysis.",
+        desc: "A seasoned radiologist in Indirapuram with expertise in diagnosing and interpreting medical images, ensuring the highest quality patient care through meticulous analysis.",
         profileUrl: "/doctor/santosh-kumar",
     },
 ];
@@ -40,32 +40,32 @@ const whyUsCards = [
     {
         emoji: "🏅",
         title: "23+ Years Experienced Doctors",
-        desc: "Our team includes some of Delhi's finest infertility specialists with over two decades of experience handling both straightforward and complex infertility cases.",
+        desc: "Our team includes some of Indirapuram's finest infertility specialists with over two decades of experience handling both straightforward and complex infertility cases.",
     },
     {
         emoji: "📈",
-        title: "High IVF Success Rate",
-        desc: "Srijan IVF has helped over 35,000 couples realise their dream of parenthood, with a consistently high IVF success rate driven by clinical excellence and lab quality.",
+        title: "Customised Fertility Plans",
+        desc: "Treatment designed around your age, diagnosis, and personal health history — never generic.",
     },
     {
         emoji: "❤️",
-        title: "Personalised Care",
-        desc: "Every patient's fertility journey is unique. We design treatment plans based on your individual age, health parameters, diagnosis, and medical history.",
+        title: "Fertility Counselling",
+        desc: "Dedicated emotional and clinical support throughout every stage of your fertility journey.",
     },
     {
         emoji: "🔬",
         title: "Advanced ART Laboratories",
-        desc: "Our NABL-certified embryology labs utilise next-generation technology — time-lapse incubators, PGT-A, vitrification — ensuring optimal embryo quality and outcomes.",
+        desc: "NABL-certified embryology labs with time-lapse incubators and vitrification technology.",
     },
     {
         emoji: "💰",
         title: "Transparent Treatment Pricing",
-        desc: "We believe world-class fertility care should be accessible. Our pricing is fully transparent with no hidden costs, and flexible EMI options are available for all patients.",
+        desc: "No hidden costs. Affordable treatment packages with easy EMI options for all patients.",
     },
     {
         emoji: "🔒",
-        title: "Safe, Trustworthy & Confidential",
-        desc: "Your safety and privacy are our highest priorities. Srijan IVF follows rigorously safe clinical protocols and ensures complete confidentiality for every patient.",
+        title: "Safe & Confidential",
+        desc: "ICMR-approved clinical protocols. Your identity and data are always kept fully secure.",
     },
 ];
 
@@ -148,7 +148,7 @@ const bookingSteps = [
     {
         num: "1",
         title: "Call or WhatsApp Us",
-        desc: "Reach our Delhi fertility helpline at +91 971 174 8080 or send a WhatsApp enquiry anytime.",
+        desc: "Reach our Indirapuram fertility helpline at +91 971 174 8080 or send a WhatsApp enquiry anytime.",
     },
     {
         num: "2",
@@ -158,42 +158,46 @@ const bookingSteps = [
     {
         num: "3",
         title: "Choose a Convenient Slot",
-        desc: "Pick a date and time that suits your schedule to meet our IVF specialist at our Delhi fertility centre.",
+        desc: "Pick a date and time that suits your schedule to meet our IVF specialist at our Indirapuram fertility centre.",
     },
     {
         num: "4",
         title: "Begin Your Journey",
-        desc: "Visit Srijan IVF Delhi and start your personalised parenthood journey with our caring and experienced team.",
+        desc: "Visit Srijan IVF Indirapuram and start your personalised parenthood journey with our caring and experienced team.",
     },
 ];
 
 const faqs = [
     {
-        q: "What is the success rate of IVF at Srijan IVF Delhi?",
-        a: "Srijan IVF Delhi maintains one of the highest IVF success rates in the city — approximately 80–85% per cycle for women under 35. Success rates vary based on age, diagnosis, and medical history. Our fertility specialists will give you a personalised estimate after an initial evaluation.",
+        q: "Is Srijan IVF the best IVF centre in Indrapuram, Ghaziabad?",
+        a: "Srijan IVF is one of the most trusted and highly rated fertility centres in Indrapuram and Ghaziabad NCR. With 20+ years of expert doctors, NABL-certified embryology labs, and consistently high IVF success rates, we are the first choice for couples seeking fertility treatment in this region.",
     },
     {
-        q: "How much does IVF treatment cost at Srijan IVF in Delhi?",
-        a: "IVF treatment at Srijan IVF Delhi starts from ₹90,000 per cycle, with all-inclusive, transparent pricing and no hidden charges. The final cost depends on the specific treatment protocol, diagnostic tests, and medications required. We also offer EMI options to make treatment accessible.",
+        q: "What is the IVF success rate at Srijan IVF Indrapuram?",
+        a: "Our Indrapuram centre maintains an IVF success rate of approximately 80–85% per cycle for women under 35, which is among the highest in Ghaziabad NCR. Success varies based on age, diagnosis, embryo quality, and other clinical factors. Our specialists will give you a personalised success estimate at your first consultation.",
     },
     {
-        q: "How many IVF cycles will I need?",
-        a: "Many couples achieve success in the first or second IVF cycle. The number of cycles needed depends on individual factors such as age, egg quality, sperm parameters, uterine health, and embryo quality. Our doctors provide a detailed prognosis based on your specific case.",
+        q: "What is the cost of IVF treatment in Indrapuram?",
+        a: "IVF treatment at Srijan IVF Indirapuram starts from ₹90,000 per cycle, with all-inclusive, transparent pricing and no hidden charges. The final cost depends on the specific treatment protocol, diagnostic tests, and medications required. We also offer EMI options to make treatment accessible.",
     },
     {
-        q: "Is IVF treatment safe at Srijan IVF Delhi?",
-        a: "Yes, IVF is a safe and well-established medical procedure. At Srijan IVF, we follow strict clinical protocols approved by the ICMR (Indian Council of Medical Research). Our medical team carefully monitors every patient throughout the stimulation, retrieval, and transfer stages to minimise any risks.",
+        q: "Do you serve patients from Vaishali, Raj Nagar Extension, and Kaushambi?",
+        a: "Absolutely. Our Indrapuram fertility centre is conveniently accessible for couples from Vaishali, Raj Nagar Extension, Kaushambi, Crossings Republik, Noida Extension, Anand Vihar, and all nearby NCR areas. We also offer teleconsultation for patients who prefer an online first appointment before visiting in person.",
     },
     {
-        q: "Can I consult online with a Srijan IVF doctor in Delhi?",
-        a: "Absolutely. Srijan IVF offers both in-clinic and online video consultations with our Delhi fertility specialists. You can book a teleconsultation by calling our helpline or submitting an enquiry through our website. It's a convenient first step, particularly if you're from outside Delhi.",
+        q: "Can I get a same-day appointment at Srijan IVF Indrapuram?",
+        a: "Yes! We offer same-day consultation appointments at our Indrapuram centre, subject to availability. Call us at +91 971 174 8080 or WhatsApp us and our patient care team will do everything possible to accommodate you on the same day, including evenings and Saturdays.",
     },
     {
         q: "What is the difference between IVF, IUI, and ICSI?",
         a: "IUI (Intrauterine Insemination) involves placing processed sperm directly into the uterus and is typically recommended for mild fertility issues. IVF (In Vitro Fertilization) involves fertilising eggs outside the body in a lab. ICSI (Intracytoplasmic Sperm Injection) is a specialized form of IVF where a single sperm is injected directly into an egg, used primarily for male-factor infertility.",
     },
+    {
+        q: "Is the consultation at Srijan IVF Indrapuram really free?",
+        a: "Yes, your first fertility consultation at Srijan IVF Indrapuram is completely free of charge. During this session, our specialist will review your medical history, answer all your questions, and recommend the most appropriate fertility treatment path for your specific situation.",
+    },
 ];
-const BestIVFCentreDelhi = () => {
+const BestIVFCentreIndirapuram = () => {
     const [showPopup, setShowPopup] = useState(false);
 
 
@@ -322,12 +326,12 @@ const BestIVFCentreDelhi = () => {
 
             formData.append(
                 "source_name",
-                "Delhi Banner Form"
+                "Indirapuram Banner Form"
             );
 
             formData.append(
                 "city_name",
-                "Delhi"
+                "Indirapuram"
             );
 
             formData.append(
@@ -370,16 +374,16 @@ const BestIVFCentreDelhi = () => {
                         <div>
 
                             <span className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-xl text-pink-700 border border-pink-200 rounded-full px-5 py-2 text-sm font-semibold mb-6 shadow-sm">
-                                ✦ Trusted IVF Centre in Delhi
+                                ✦ Trusted IVF Centre in Indirapuram
                             </span>
 
                             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.15] text-gray-900 mb-5 md:mb-6">
                                 Best IVF Centre <br />
-                                in <span className="text-pink-600">Delhi</span>
+                                in <span className="text-pink-600">Indirapuram</span>
                             </h1>
 
                             <p className="text-gray-600 text-[15px] sm:text-base md:text-lg leading-relaxed max-w-2xl mb-7 md:mb-8">
-                                Struggling with infertility? You are not alone. Millions of couples in India face this journey. At Srijan IVF, we combine 23+ years of expertise with cutting-edge ART technology to personalise every step of your parenthood journey — from consultation to your baby's first cry.
+                                Searching for a trusted fertility clinic near Indrapuram or Indirapuram? Srijan IVF brings world-class reproductive medicine to your neighbourhood in Ghaziabad NCR. With expert doctors, state-of-the-art ART labs, and deeply personalised care — your parenthood journey starts right here.
 
 
                             </p>
@@ -566,24 +570,21 @@ const BestIVFCentreDelhi = () => {
                 <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 md:gap-14 items-center">
                     <div>
                         <p className="text-xs font-semibold tracking-widest uppercase text-pink-400 mb-3">
-                            About Srijan IVF Delhi
+                            About Srijan IVF Indirapuram
                         </p>
                         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-5 md:mb-6 leading-snug">
-                            Best IVF Centre in Delhi:<br />
+                            Best IVF Centre in Indirapuram:<br />
                             <span className="text-pink-600">Who We Are</span>
                         </h2>
                         <p className="text-gray-500 leading-relaxed mb-4">
-                            Are you facing infertility challenges? Does the dream of having a child feel distant? You are not alone. Across India and the world, countless couples share this journey. But there is hope — advanced IVF treatment in Delhi is helping thousands of families become complete.
-                        </p>
+                            Are you facing infertility challenges and looking for a trusted fertility clinic near Indrapuram or Indirapuram? You are not alone — and you don't need to travel far. Srijan IVF has brought advanced, compassionate fertility care right to the heart of Ghaziabad NCR.                        </p>
                         <p className="text-gray-500 leading-relaxed mb-4">
-                            Srijan IVF, recognised as one of the best IVF centres in Delhi, has been transforming lives by providing personalised, evidence-based fertility care. We stand by your side from the very first consultation through to post-recovery and beyond.
-                        </p>
+                            Located conveniently in Indrapuram, our centre serves couples from across Ghaziabad, Vaishali, Raj Nagar Extension, Crossings Republik, Noida Extension, and nearby areas who seek world-class IVF treatment without the hassle of a long commute to Delhi.                        </p>
                         <p className="text-gray-500 leading-relaxed">
-                            With state-of-the-art ART laboratory technology, decades of clinical experience, and a deeply compassionate team of fertility specialists, we craft each IVF journey uniquely for every couple.
-                        </p>
+                            With highly experienced IVF specialists, NABL-certified embryology laboratories, and deeply personalised treatment protocols, Srijan IVF Indrapuram is where your dream of parenthood truly begins.                        </p>
                         <div className="mt-6 border-l-4 border-pink-400 bg-pink-50 rounded-r-2xl px-5 py-4">
                             <p className="text-pink-700 text-sm leading-relaxed font-medium">
-                                🌱 Srijan IVF Delhi: Where science meets compassion. Our personalised fertility protocols are designed around your unique health profile, age, and medical history — not a one-size-fits-all approach.
+                                🌱 Srijan IVF Indirapuram:  Bringing Delhi-level IVF expertise to Ghaziabad — with personalised care crafted around your unique health profile, medical history, and parenthood goals.
                             </p>
                         </div>
                     </div>
@@ -593,7 +594,7 @@ const BestIVFCentreDelhi = () => {
                             <div className="absolute -top-4 -left-4 w-full h-full rounded-[120px_120px_120px_40px] bg-pink-100 -z-10" />
                             <img
                                 src={clinicImg}
-                                alt="Srijan IVF Clinic Delhi"
+                                alt="Srijan IVF Clinic Indirapuram"
                                 className="w-full max-w-[280px] sm:max-w-sm md:max-w-md object-cover rounded-[80px_80px_80px_30px] md:rounded-[120px_120px_120px_40px] border-[5px] md:border-[6px] border-pink-200 shadow-xl"
                             />
                         </div>
@@ -608,7 +609,7 @@ const BestIVFCentreDelhi = () => {
                             What Sets Us Apart
                         </p>
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                            Why Srijan IVF is Delhi's Most Trusted Centre
+                            Why Srijan IVF is Indirapuram's Most Trusted Centre
                         </h2>
                     </div>
                     <div className="grid sm:grid-cols-2 gap-5">
@@ -669,7 +670,7 @@ const BestIVFCentreDelhi = () => {
                             Meet Our Specialists
                         </p>
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                            Best IVF Doctors in Delhi at Srijan IVF
+                            Best IVF Doctors in Indirapuram at Srijan IVF
                         </h2>
                     </div>
                     <p className="text-gray-500 text-center max-w-2xl mx-auto mb-12 leading-relaxed">
@@ -762,7 +763,7 @@ const BestIVFCentreDelhi = () => {
                             Our Treatments
                         </p>
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                            Infertility Services at Srijan IVF Delhi
+                            Infertility Services at Srijan IVF Indirapuram
                         </h2>
                     </div>
                     <p className="text-gray-500 text-center max-w-xl mx-auto mb-12">
@@ -798,7 +799,7 @@ const BestIVFCentreDelhi = () => {
                         Getting Started
                     </p>
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-                        How to Book an Appointment at Srijan IVF Delhi?
+                        How to Book an Appointment at Srijan IVF Indirapuram?
                     </h2>
                     <p className="text-gray-500 mb-16 max-w-xl mx-auto">
                         Booking a consultation at Srijan IVF is simple, quick, and completely stress-free. Our team is here to guide you every step of the way.
@@ -939,7 +940,7 @@ const BestIVFCentreDelhi = () => {
                     </h2>
 
                     <p className="text-white/90 text-sm sm:text-base md:text-lg leading-relaxed max-w-3xl mx-auto mb-10">
-                        Join 35,000+ happy families who trusted Srijan IVF Delhi for their fertility care.
+                        Join 35,000+ happy families who trusted Srijan IVF Indirapuram for their fertility care.
                         Book your free consultation now.
                     </p>
 
@@ -970,4 +971,4 @@ const BestIVFCentreDelhi = () => {
     );
 };
 
-export default BestIVFCentreDelhi;
+export default BestIVFCentreIndirapuram;
