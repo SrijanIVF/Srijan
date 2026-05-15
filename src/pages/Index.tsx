@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import SEOMetaHead from "@/components/SEOMetaHead";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Treatments from "@/components/Treatments";
@@ -16,6 +17,26 @@ import SuccessStories from "@/components/success-stories";
 
 const Index = () => (
   <main className="min-h-screen bg-background">
+    <SEOMetaHead
+      metaData={{
+        meta_title: "Best IVF Centre in Delhi | IVF Treatment & Fertility Clinic | Srijan IVF",
+        metaDescription:
+          "Srijan IVF Centre is one of the best IVF & fertility clinics in Delhi offering IVF, IUI, ICSI, PCOS, infertility treatment with high success rates and expert fertility specialists.",
+        metaKeyword:
+          "best ivf centre in delhi, ivf centre in delhi, fertility clinic in delhi, ivf treatment, iui treatment, icsi treatment, infertility treatment, best fertility doctor, ivf specialist, pcos treatment, male infertility treatment, female infertility clinic, srijan ivf centre",
+        author: "Srijan IVF Centre",
+        publisher: "Srijan IVF Centre",
+        title: "Best IVF Centre in Delhi | Srijan IVF",
+        url: "https://www.srijanivfcentre.com/best-ivf-centre-delhi",
+        canonical_url: "https://www.srijanivfcentre.com/best-ivf-centre-delhi",
+        og_type: "website",
+        twitter_card: "summary_large_image",
+        is_active: true,
+        robot: {
+          content: "index, follow",
+        },
+      }}
+    />
     <Navbar />
     <Hero />
     <About />

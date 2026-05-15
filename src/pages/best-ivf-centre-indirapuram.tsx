@@ -1,6 +1,7 @@
 import aboutImg from "@/assets/About-us-banner.jpg";
 import clinicImg from "@/assets/hero-couple.jpg";
 import Navbar from "@/components/Navbar";
+import SEOMetaHead from "@/components/SEOMetaHead";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { useState } from "react";
@@ -355,6 +356,41 @@ const BestIVFCentreIndirapuram = () => {
 
     return (
         <>
+            <SEOMetaHead
+                metaData={{
+                    meta_title:
+                        "Best IVF Centre in Indirapuram | IVF Treatment & Fertility Clinic | Srijan IVF",
+
+                    metaDescription:
+                        "Srijan IVF Centre is one of the best IVF & fertility clinics in Indirapuram offering IVF, IUI, ICSI, PCOS, infertility treatment with high success rates and expert fertility specialists.",
+
+                    metaKeyword:
+                        "best ivf centre in indirapuram, ivf centre in indirapuram, fertility clinic in indirapuram, ivf treatment, iui treatment, icsi treatment, infertility treatment, best fertility doctor, ivf specialist, pcos treatment, male infertility treatment, female infertility clinic, srijan ivf centre",
+
+                    author: "Srijan IVF Centre",
+
+                    publisher: "Srijan IVF Centre",
+
+                    title:
+                        "Best IVF Centre in Indirapuram | Srijan IVF",
+
+                    url:
+                        "https://www.srijanivfcentre.com/best-ivf-centre-indirapuram",
+
+                    canonical_url:
+                        "https://www.srijanivfcentre.com/best-ivf-centre-indirapuram",
+
+                    og_type: "website",
+
+                    twitter_card: "summary_large_image",
+
+                    is_active: true,
+
+                    robot: {
+                        content: "index, follow",
+                    },
+                }}
+            />
             {showPopup && <LeadPopup onClose={() => setShowPopup(false)} />}
             <Navbar />
             <section className="relative overflow-hidden bg-gradient-to-br from-white via-pink-50 to-rose-100 pt-24 md:pt-28 pb-10 md:pb-8 min-h-auto lg:min-h-[620px] flex items-center">

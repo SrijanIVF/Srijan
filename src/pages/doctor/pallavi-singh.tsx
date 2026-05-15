@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import SEOMetaHead from "@/components/SEOMetaHead";
 import Reviews from "@/components/Reviews";
 import Footer from "@/components/Footer";
 //import Callus from "@/components/callbtn";
@@ -34,6 +35,41 @@ const achievements = [
 const DrPallaviPage = () => {
   return (
     <>
+      <SEOMetaHead
+        metaData={{
+          meta_title:
+            "Dr. Pallavi Singh | IVF Specialist in Delhi NCR | Srijan IVF Centre",
+
+          metaDescription:
+            "Consult Dr. Pallavi Singh, experienced IVF Specialist at Srijan IVF Centre, Delhi NCR. Expert in IVF, IUI, ICSI, infertility, PCOS, and advanced fertility treatments.",
+
+          metaKeyword:
+            "Dr Pallavi Singh, IVF doctor in Delhi NCR, IVF specialist, fertility doctor, infertility treatment, IVF treatment, IUI, ICSI, PCOS treatment, fertility specialist Delhi, Srijan IVF Centre",
+
+          author: "Srijan IVF Centre",
+
+          publisher: "Srijan IVF Centre",
+
+          title:
+            "Dr. Pallavi Singh | IVF Specialist at Srijan IVF Centre",
+
+          url:
+            "https://www.srijanivfcentre.com/doctor/pallavi-singh",
+
+          canonical_url:
+            "https://www.srijanivfcentre.com/doctor/pallavi-singh",
+
+          og_type: "profile",
+
+          twitter_card: "summary_large_image",
+
+          is_active: true,
+
+          robot: {
+            content: "index, follow",
+          },
+        }}
+      />
       <Navbar />
       <section className="relative w-full h-[65vh] flex items-center justify-center text-center">
         <img src={bannerImg} alt="Dr. Pallavi Singh" className="absolute inset-0 w-full h-full object-cover brightness-40" />
@@ -240,7 +276,7 @@ const DrPallaviPage = () => {
         </div>
       </section>
       <Reviews />
-      
+
       <WhatsAppButton />
       <Footer />
     </>
