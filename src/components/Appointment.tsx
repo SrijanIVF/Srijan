@@ -8,15 +8,11 @@ const locations = [
   },
   {
     title: "Indirapuram",
-    desc: "Shop No.2, Khasra No. 585, kalyan Vyas, 202/1, Khichripur Rd, Mayur Vihar Phase I, Kalyanvas, Kalyan Puri, Delhi, 110091.",
+    desc: "Plat No. 7, Abhay Khand 1, Pocket 2, Abhay Khand, Indirapuram, Ghaziabad, Uttar Pradesh 201020, Ghaziabad, Uttar Pradesh 201020.",
   },
   {
     title: "Varanasi",
     desc: "Heiwel Hospital, National Highway 56, Airport Road, near Sant Atulanand, Gilat Bazar, Chotta Chuppepur, Varanasi, Uttar Pradesh 221002.",
-  },
-  {
-    title: "Srinagar",
-    desc: "The Kidney and Urological Diseases Research Centre, Sonwar Bagh, opposite Amar Singh Club, Srinagar 190001.",
   },
 ];
 
@@ -143,9 +139,7 @@ const Appointment = () => {
 
       if (response.ok) {
         setSuccess(true);
-
         setForm(initialForm);
-
         setErrors({});
       } else {
         alert("Something went wrong");
@@ -167,7 +161,7 @@ const Appointment = () => {
       id="appointment"
       className="py-16 md:py-24 bg-gradient-to-br from-pink-50 to-rose-50"
     >
-      <div className="container mx-auto px-4 md:px-6 max-w-6xl">
+      <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         <div className="text-center mb-10 md:mb-14">
           <h2 className="text-3xl md:text-5xl font-bold text-pink-600">
             Book Appointment
@@ -178,70 +172,77 @@ const Appointment = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 items-stretch">
-          <div className="flex flex-col gap-4">
-            <div className="grid grid-cols-2 gap-3 md:gap-4">
-              {locations.map((loc) => (
-                <div
-                  key={loc.title}
-                  className="bg-white border border-pink-100 rounded-2xl p-4 md:p-5 flex flex-col gap-2 hover:shadow-md hover:border-pink-300 transition-all duration-200"
-                >
-                  <div className="w-8 h-8 md:w-9 md:h-9 rounded-xl bg-pink-50 flex items-center justify-center shrink-0">
-                    <MapPin className="w-4 h-4 text-pink-500" />
-                  </div>
+        <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-8 xl:gap-10 items-start">
 
-                  <div>
-                    <h3 className="font-semibold text-gray-800 text-sm">
-                      {loc.title}
-                    </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 auto-rows-fr">
 
-                    <p className="text-xs text-gray-400 mt-1 leading-relaxed">
-                      {loc.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
-              <div className="bg-white border border-pink-100 rounded-2xl p-4 md:p-5 flex gap-3 items-center hover:shadow-md hover:border-pink-300 transition-all duration-200">
-                <div className="w-9 h-9 rounded-xl bg-pink-50 flex items-center justify-center shrink-0">
-                  <Phone className="w-4 h-4 text-pink-500" />
+            {locations.map((loc) => (
+              <div
+                key={loc.title}
+                className="bg-white border border-pink-100 rounded-2xl p-5 flex flex-col gap-3 hover:shadow-md hover:border-pink-300 transition-all duration-200 min-h-[220px]"
+              >
+                <div className="w-10 h-10 rounded-xl bg-pink-50 flex items-center justify-center shrink-0">
+                  <MapPin className="w-5 h-5 text-pink-500" />
                 </div>
 
                 <div>
-                  <p className="text-xs text-gray-400 font-medium">
+                  <h3 className="font-semibold text-gray-800 text-lg">
+                    {loc.title}
+                  </h3>
+
+                  <p className="text-sm text-gray-500 mt-2 leading-7">
+                    {loc.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+
+            <div className="flex flex-col gap-4 h-full">
+
+              <div className="bg-white border border-pink-100 rounded-2xl p-5 flex items-center gap-4 hover:shadow-md hover:border-pink-300 transition-all duration-200 flex-1 min-h-[102px]">
+
+                <div className="w-12 h-12 rounded-xl bg-pink-50 flex items-center justify-center shrink-0">
+                  <Phone className="w-5 h-5 text-pink-500" />
+                </div>
+
+                <div className="min-w-0">
+                  <p className="text-sm text-gray-400 font-medium">
                     Call Us
                   </p>
 
                   <a
-                    href="tel:+91971 174 8080"
-                    className="text-sm font-semibold text-pink-600 mt-0.5 block hover:underline"
+                    href="tel:+919711748080"
+                    className="text-base md:text-lg font-semibold text-pink-600 mt-1 block hover:underline"
                   >
                     +91-971 174 8080
                   </a>
                 </div>
               </div>
 
-              <div className="bg-white border border-pink-100 rounded-2xl p-4 md:p-5 flex gap-3 items-center hover:shadow-md hover:border-pink-300 transition-all duration-200">
-                <div className="w-9 h-9 rounded-xl bg-pink-50 flex items-center justify-center shrink-0">
-                  <Mail className="w-4 h-4 text-pink-500" />
+              <div className="bg-white border border-pink-100 rounded-2xl p-5 flex items-center gap-4 hover:shadow-md hover:border-pink-300 transition-all duration-200 flex-1 min-h-[102px]">
+
+                <div className="w-12 h-12 rounded-xl bg-pink-50 flex items-center justify-center shrink-0">
+                  <Mail className="w-5 h-5 text-pink-500" />
                 </div>
 
-                <div>
-                  <p className="text-xs text-gray-400 font-medium">
+                <div className="min-w-0">
+                  <p className="text-sm text-gray-400 font-medium">
                     Email Us
                   </p>
 
-                  <p className="text-sm font-semibold text-pink-600 mt-0.5 break-all">
+                  <a
+                    href="mailto:info@srijanivfcentre.com"
+                    className="text-sm md:text-base font-semibold text-pink-600 mt-1 block break-words hover:underline"
+                  >
                     info@srijanivfcentre.com
-                  </p>
+                  </a>
                 </div>
               </div>
+
             </div>
           </div>
 
-          <div className="bg-white border border-pink-100 rounded-3xl p-5 md:p-8 shadow-lg flex flex-col">
+          <div className="bg-white border border-pink-100 rounded-3xl p-5 md:p-7 lg:p-8 shadow-lg flex flex-col h-full">
             <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-5 md:mb-6">
               Fill in your details
             </h3>
@@ -441,7 +442,7 @@ const Appointment = () => {
                   value={form.message}
                   onChange={handleChange}
                   placeholder="Any additional information..."
-                  className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-700 outline-none focus:border-pink-400 transition resize-none min-h-[80px] flex-1"
+                  className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-700 outline-none focus:border-pink-400 transition resize-none min-h-[100px] flex-1"
                 />
               </div>
 
@@ -453,6 +454,7 @@ const Appointment = () => {
               </button>
             </form>
           </div>
+
         </div>
       </div>
     </section>
