@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import bannerImg from "@/assets/About-us-banner.jpg";
 import { blogs } from "@/blogs";
+import LeadPopup from "@/components/LeadPopup";
 
 // ─── To add a new blog: create a file in src/blogs/ and add it to src/blogs/index.ts ───
 
@@ -83,9 +84,8 @@ const BlogsPage = () => {
           ))}
         </div>
       </section>
-
-      
       <WhatsAppButton />
+      <LeadPopup />
       <Footer />
     </>
   );

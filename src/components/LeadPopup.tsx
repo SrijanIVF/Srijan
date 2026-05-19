@@ -5,7 +5,7 @@ import { useToast } from "@/hooks/use-toast";
 
 const STORAGE_KEY = "lead_submitted_time";
 const ONE_DAY = 24 * 60 * 60 * 1000;
-const RESHOW_DELAY = 15 * 60 * 1000;
+const RESHOW_DELAY = 30 * 60 * 1000;
 
 type FormState = {
   name: string;
@@ -200,7 +200,24 @@ const LeadPopup = ({ onClose }: LeadPopupProps) => {
       formData.append("name", payload.name);
       formData.append("mobile", payload.phone);
       formData.append("source_name", "LeadPopup");
-      formData.append("city_name", "Delhi");
+      const pathname = window.location.pathname
+        .toLowerCase()
+        .replace(/^\/|\/$/g, "");
+
+      let cityName = "India";
+
+      if (pathname.startsWith("best-ivf-centre-")) {
+        cityName = pathname
+          .replace("best-ivf-centre-", "")
+          .split("-")
+          .map(
+            (word) =>
+              word.charAt(0).toUpperCase() + word.slice(1)
+          )
+          .join(" ");
+      }
+
+      formData.append("city_name", cityName);
 
       if (payload.treatment) {
         formData.append(
@@ -284,7 +301,7 @@ const LeadPopup = ({ onClose }: LeadPopupProps) => {
                 errors.name
                   ? "border-red-400 focus:ring-red-200"
                   : "focus:ring-pink-200 focus:border-pink-400"
-              }`}
+                }`}
             />
 
             <ErrMsg msg={errors.name} />
@@ -301,7 +318,7 @@ const LeadPopup = ({ onClose }: LeadPopupProps) => {
                 errors.phone
                   ? "border-red-400 focus:ring-red-200"
                   : "focus:ring-pink-200 focus:border-pink-400"
-              }`}
+                }`}
             />
 
             <ErrMsg msg={errors.phone} />

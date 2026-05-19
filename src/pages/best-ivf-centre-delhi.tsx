@@ -10,6 +10,8 @@ import doc2 from "@/assets/Dr.-santosh.webp";
 import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import LeadPopup from "@/components/LeadPopup";
+import centreImg from "@/assets/Centre-img-delhi.jpeg";
+import {MapPin, Phone } from "lucide-react";
 const doctors = [
     {
         img: doc1,
@@ -663,6 +665,18 @@ const BestIVFCentreDelhi = () => {
                             </div>
                         ))}
                     </div>
+                    <div className="mt-10 md:mt-12 text-center">
+                        <p className="text-pink-600 font-semibold text-lg mb-5">
+                            Your parenthood journey starts with one conversation ❤️
+                        </p>
+
+                        <button
+                            onClick={() => setShowPopup(true)}
+                            className="inline-flex items-center justify-center px-8 h-12 rounded-xl bg-pink-600 hover:bg-pink-700 text-white font-semibold shadow-lg hover:scale-[1.02] transition-all duration-300"
+                        >
+                            Request Call Back
+                        </button>
+                    </div>
                 </div>
             </section>
 
@@ -788,6 +802,18 @@ const BestIVFCentreDelhi = () => {
                             </div>
                         ))}
                     </div>
+                    <div className="mt-12 text-center">
+                        <p className="text-pink-600 font-semibold text-lg">
+                            Meet the experts who make parenthood possible ❤️
+                        </p>
+
+                        <button
+                            onClick={() => setShowPopup(true)}
+                            className="mt-6 px-6 py-3 bg-pink-600 text-white rounded-full font-semibold hover:bg-pink-700 transition"
+                        >
+                            Book Free IVF Appointment
+                        </button>
+                    </div>
                 </div>
             </section>
 
@@ -828,29 +854,99 @@ const BestIVFCentreDelhi = () => {
                 </div>
             </section>
 
-            <section className="py-20 px-6 bg-pink-50">
-                <div className="max-w-5xl mx-auto text-center">
-                    <p className="text-xs font-semibold tracking-widest uppercase text-pink-400 mb-2">
-                        Getting Started
-                    </p>
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-                        How to Book an Appointment at Srijan IVF Delhi?
-                    </h2>
-                    <p className="text-gray-500 mb-16 max-w-xl mx-auto">
-                        Booking a consultation at Srijan IVF is simple, quick, and completely stress-free. Our team is here to guide you every step of the way.
-                    </p>
+            <section className="py-14 md:py-20 bg-gradient-to-b from-pink-50 to-white px-4 sm:px-6">
+                <div className="max-w-6xl mx-auto">
 
-                    <div className="relative flex flex-col md:flex-row justify-between items-center md:items-start gap-8 md:gap-10">
-                        <div className="hidden md:block absolute top-8 left-[12%] right-[12%] h-0.5 bg-pink-200" />
-                        {bookingSteps.map((s, i) => (
-                            <div key={i} className="relative flex-1 flex flex-col items-center text-center">
-                                <div className="w-16 h-16 rounded-full bg-pink-600 text-white flex items-center justify-center text-xl font-bold mb-5 z-10 shadow-lg shadow-pink-200">
-                                    {s.num}
-                                </div>
-                                <h4 className="font-bold text-gray-900 mb-2 text-sm">{s.title}</h4>
-                                <p className="text-xs text-gray-500 leading-relaxed max-w-[220px] md:max-w-[160px]">{s.desc}</p>
+                    <div className="text-center mb-10 md:mb-14">
+                        <p className="text-xs font-semibold tracking-[3px] uppercase text-pink-400 mb-3">
+                            Our Fertility Centre
+                        </p>
+
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+                            Our Fertility Hospital in Khicharipur with
+                            <span className="text-pink-600"> Complete Care</span>
+                        </h2>
+                    </div>
+
+                    <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-12 items-center">
+
+                        <div className="relative">
+                            <div className="absolute -top-4 -left-4 w-full h-full rounded-[28px] bg-pink-100 -z-10"></div>
+
+                            <img
+                                src={centreImg}
+                                alt="Srijan IVF Delhi Centre"
+                                className="w-full h-[240px] sm:h-[320px] lg:h-[400px] object-cover rounded-[28px] shadow-lg"
+                            />
+                        </div>
+
+                        <div>
+
+                            <div className="inline-flex items-center gap-2 bg-pink-100 text-pink-600 px-4 py-2 rounded-full text-xs font-semibold mb-4">
+                                📍 Delhi NCR Centre
                             </div>
-                        ))}
+
+                            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 leading-snug mb-4">
+                                Srijan IVF Fertility Centre in Delhi
+                            </h3>
+
+                            <p className="text-gray-600 text-sm md:text-base leading-7 mb-6">
+                                Shop No.2, Khasra No. 585, kalyan Vyas, 202/1,
+                                Khichripur Rd, Mayur Vihar Phase I, Kalyanvas,
+                                Kalyan Puri, Delhi, 110091.
+                            </p>
+
+                            <div className="grid grid-cols-2 gap-4 mb-7">
+
+                                <div className="bg-white border border-pink-100 rounded-2xl p-4 shadow-sm">
+                                    <p className="text-2xl font-bold text-pink-600 mb-1">
+                                        23+
+                                    </p>
+
+                                    <p className="text-xs sm:text-sm text-gray-500">
+                                        Years Experience
+                                    </p>
+                                </div>
+
+                                <div className="bg-white border border-pink-100 rounded-2xl p-4 shadow-sm">
+                                    <p className="text-2xl font-bold text-pink-600 mb-1">
+                                        18K+
+                                    </p>
+
+                                    <p className="text-xs sm:text-sm text-gray-500">
+                                        Happy Families
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <div className="flex flex-col sm:flex-row gap-4">
+
+                                <a
+                                    href="tel:+919711748080"
+                                    className="flex-1 h-12 rounded-xl bg-pink-600 hover:bg-pink-700 text-white text-sm font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-md"
+                                >
+                                    <>
+                                        <Phone className="w-4 h-4" />
+                                        Call Now
+                                    </>
+                                </a>
+
+                                <a
+                                    href="https://maps.google.com/?q=Shop+No.2,+Khasra+No.+585,+Mayur+Vihar+Phase+1,+Delhi"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex-1 h-12 rounded-xl border border-pink-300 text-pink-600 text-sm font-semibold hover:bg-pink-50 transition-all duration-300 flex items-center justify-center gap-2"
+                                >
+                                    <>
+                                        <MapPin className="w-4 h-4" />
+                                        Get Direction
+                                    </>
+                                </a>
+
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </section>
@@ -1001,6 +1097,7 @@ const BestIVFCentreDelhi = () => {
 
             </section>
             <WhatsAppButton />
+            <LeadPopup />
             <Footer />
         </>
     );

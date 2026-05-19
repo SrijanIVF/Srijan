@@ -94,8 +94,8 @@ const Navbar = () => {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled
-          ? "bg-white/90 backdrop-blur-lg shadow-md"
-          : "bg-transparent"
+        ? "bg-white/90 backdrop-blur-lg shadow-md"
+        : "bg-transparent"
         }`}
     >
       <nav className="container mx-auto flex items-center justify-between py-3 px-4">
@@ -156,7 +156,7 @@ const Navbar = () => {
                           {category.items.map((item) => (
                             <Link
                               key={item.slug}
-                              to={`/treatments/${item.slug}`}
+                              to={`/${item.slug}`}
                               className="block px-5 py-3 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 transition-all"
                             >
                               {item.name}
@@ -191,9 +191,12 @@ const Navbar = () => {
                 </>
               ) : l.label === "Centre" ? (
                 <>
-                  <span className="text-sm font-medium text-gray-700 hover:text-pink-600 cursor-pointer transition-colors">
+                  <Link
+                    to="/centre"
+                    className="text-sm font-medium text-gray-700 hover:text-pink-600 transition-colors"
+                  >
                     Centre
-                  </span>
+                  </Link>
 
                   <div className="absolute left-0 top-full mt-3 w-64 bg-white border border-pink-100 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden">
                     <Link
@@ -285,8 +288,8 @@ const Navbar = () => {
 
                         <ChevronDown
                           className={`h-4 w-4 transition-transform ${openCategory === category.title
-                              ? "rotate-180"
-                              : ""
+                            ? "rotate-180"
+                            : ""
                             }`}
                         />
                       </button>
@@ -296,7 +299,7 @@ const Navbar = () => {
                           {category.items.map((item) => (
                             <Link
                               key={item.slug}
-                              to={`/treatments/${item.slug}`}
+                              to={`/${item.slug}`}
                               onClick={() => setOpen(false)}
                               className="block px-5 py-3 text-sm text-gray-600 hover:bg-pink-50 hover:text-pink-600"
                             >

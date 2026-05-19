@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import bannerImg from "@/assets/About-us-banner.jpg";
 import centreImg from "@/assets/our_center.webp";
+import LeadPopup from "@/components/LeadPopup";
 
 const whyChoose = [
   {
@@ -36,7 +37,7 @@ const centres = [
   {
     city: "Indirapuram",
     address:
-      "Plot Number – 7, Abhay Khand 1, Indirapuram, Ghaziabad, Uttar Pradesh 201014",
+      "Plot No. 7, Abhay Khand 1, Pocket 2, Abhay Khand, Indirapuram, Ghaziabad, Uttar Pradesh 201020.",
     phone: "+91-971 174 8080",
     email: "info@srijanivfcentre.com",
   },
@@ -44,13 +45,6 @@ const centres = [
     city: "Varanasi",
     address:
       "Heiwel Hospital, National Highway 56, Airport Road, near Sant Atulanand, Gilat Bazar, Chotta Chuppepur, Varanasi, Uttar Pradesh 221002.",
-    phone: "+91-971 174 8080",
-    email: "info@srijanivfcentre.com",
-  },
-  {
-    city: "Srinagar",
-    address:
-      "The Kidney and Urological Diseases Research Centre, Sonwar Bagh, opposite Amar Singh Club, Srinagar 190001.",
     phone: "+91-971 174 8080",
     email: "info@srijanivfcentre.com",
   },
@@ -188,8 +182,8 @@ const OurCentrePage = () => {
           </div>
         </div>
       </section>
-      
       <WhatsAppButton />
+      <LeadPopup />
       <Footer />
     </>
   );

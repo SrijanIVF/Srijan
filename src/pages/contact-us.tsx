@@ -6,6 +6,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import bannerImg from "@/assets/About-us-banner.jpg";
 import Appointments from "@/components/Appointment";
 import Reviews from "@/components/Reviews.tsx";
+import LeadPopup from "@/components/LeadPopup";
 
 const ContactPage = () => {
   const [form, setForm] = useState({
@@ -59,7 +60,7 @@ const ContactPage = () => {
         ></iframe>
       </section>
       <Reviews />
-      
+      <LeadPopup />
       <WhatsAppButton />
       <Footer />
     </>

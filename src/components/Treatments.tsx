@@ -53,7 +53,7 @@ const Treatments = () => {
     <>
       {showPopup && <LeadPopup onClose={() => setShowPopup(false)} />}
 
-      <section className="py-16 sm:py-24 bg-gradient-to-b from-white to-pink-50">
+      <section className="py-16 sm:py-14 bg-gradient-to-b from-white to-pink-50">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="text-2xl sm:text-4xl md:text-5xl font-semibold">

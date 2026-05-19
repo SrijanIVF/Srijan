@@ -69,7 +69,7 @@ const Doctors = () => {
   const d = doctors[current];
 
   return (
-    <section id="doctors" className="py-16 sm:py-24 bg-pink-50">
+    <section id="doctors" className="py-6 sm:py-4 bg-pink-50">
       <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-pink-600 text-center mb-10 sm:mb-16">
           Meet Our Doctors

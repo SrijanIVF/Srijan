@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import bannerImg from "@/assets/About-us-banner.jpg";
 import doctorImg from "@/assets/Dr.-Pallavisingh.webp";
+import Leadpopup from "@/components/LeadPopup";
 
 const specializations = [
   { icon: "🧬", title: "IVF / ICSI", desc: "Advanced in-vitro fertilization and intracytoplasmic sperm injection procedures." },
@@ -276,8 +277,8 @@ const DrPallaviPage = () => {
         </div>
       </section>
       <Reviews />
-
       <WhatsAppButton />
+      <Leadpopup />
       <Footer />
     </>
   );

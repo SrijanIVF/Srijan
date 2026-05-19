@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 //import Callus from "@/components/callbtn";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import bannerImg from "@/assets/About-us-banner.jpg";
+import LeadPopup from "@/components/LeadPopup";
 
 const testimonialspage = () => {
   return (
@@ -32,7 +33,7 @@ const testimonialspage = () => {
       </section>
       <Testimonials />
       <Reviews />
-      
+      <LeadPopup />
       <WhatsAppButton />
       <Footer />
     </>

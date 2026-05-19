@@ -6,6 +6,7 @@ import Whyus from "@/components/whyus";
 import Footer from "@/components/Footer";
 //import Callus from "@/components/callbtn";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import LeadPopup from "@/components/LeadPopup";
 
 
 const values = [
@@ -228,8 +229,8 @@ const AboutPage = () => {
       </section>
       <Whyus />
       <Reviews />
-      
       <WhatsAppButton />
+      <LeadPopup />
       <Footer />
 
     </>

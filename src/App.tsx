@@ -64,29 +64,29 @@ const App = () => (
           <Route path="/Blogspage" element={<BlogsPage />} />
           <Route path="/blog/:slug" element={<BlogDetailPage />} />
           <Route path="/success-stories-testimonials" element={<SuccessStoriesPage />} />
-          <Route path="/treatments/ivf-treatment" element={<IVF />} />
-          <Route path="/treatments/iui-treatment" element={<IUI />} />
-          <Route path="/treatments/icsi-treatment" element={<ICSI />} />
-          <Route path="/treatments/hysteroscopy" element={<HysteroscopyPage />} /> 
-          <Route path="/treatments/male-infertility" element={<MaleInfertilityPage />} />
-          <Route path="/treatments/tesa-pesa" element={<TesaPesaPage />} />
-          <Route path="/treatments/picsi-treatment" element={<PICSI />} />
+          <Route path="/ivf-treatment" element={<IVF />} />
+          <Route path="/iui-treatment" element={<IUI />} />
+          <Route path="/icsi-treatment" element={<ICSI />} />
+          <Route path="/hysteroscopy" element={<HysteroscopyPage />} /> 
+          <Route path="/male-infertility" element={<MaleInfertilityPage />} />
+          <Route path="/tesa-pesa" element={<TesaPesaPage />} />
+          <Route path="/picsi-treatment" element={<PICSI />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/treatments/lah-treatment" element={<LAH />} />
-          <Route path="/treatments/era-treatment" element={<ERA />} />
-          <Route path="/treatments/semen-analysis" element={<SemenAnalysis />} />
-          <Route path="/treatments/blastocyst-culture" element={<BlastocystCulture />} />
-          <Route path="/treatments/laparoscopic-gynecology" element={<LaparoscopicGynecology />} />
-          <Route path="/treatments/general-gynecology" element={<GeneralGynecology />} />
-          <Route path="/treatments/robotic-gynecology" element={<RoboticGynecology />} />
-          <Route path="/treatments/adolescent-care" element={<AdolescentCare />} />
-          <Route path="/treatments/menopause-treatment" element={<MenopauseTreatment />} />
-          <Route path="/treatments/pcos-treatment" element={<PcosTreatment />} />
-          <Route path="/treatments/endometriosis-treatment" element={<EndometriosisTreatment />} />
-          <Route path="/treatments/caesarean-section" element={<CaesareanSection />} />
-          <Route path="/treatments/high-risk-pregnancy" element={<HighRiskPregnancy/>} />
-          <Route path="/treatments/low-risk-pregnancy" element={<LowRiskPregnancy/>} />
-          <Route path="/treatments/normal-delivery" element={<NormalDelivery />} />
+          <Route path="/lah-treatment" element={<LAH />} />
+          <Route path="/era-treatment" element={<ERA />} />
+          <Route path="/semen-analysis" element={<SemenAnalysis />} />
+          <Route path="/blastocyst-culture" element={<BlastocystCulture />} />
+          <Route path="/laparoscopic-gynecology" element={<LaparoscopicGynecology />} />
+          <Route path="/general-gynecology" element={<GeneralGynecology />} />
+          <Route path="/robotic-gynecology" element={<RoboticGynecology />} />
+          <Route path="/adolescent-care" element={<AdolescentCare />} />
+          <Route path="/menopause-treatment" element={<MenopauseTreatment />} />
+          <Route path="/pcos-treatment" element={<PcosTreatment />} />
+          <Route path="/endometriosis-treatment" element={<EndometriosisTreatment />} />
+          <Route path="/caesarean-section" element={<CaesareanSection />} />
+          <Route path="/high-risk-pregnancy" element={<HighRiskPregnancy/>} />
+          <Route path="/low-risk-pregnancy" element={<LowRiskPregnancy/>} />
+          <Route path="/normal-delivery" element={<NormalDelivery />} />
           <Route path="/best-ivf-centre-delhi" element={<BestIvfCentreDelhi />} />
           <Route path="/best-ivf-centre-indirapuram" element={<BestIvfCentreIndirapuram />} />
         </Routes>

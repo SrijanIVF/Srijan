@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 //import Callus from "@/components/callbtn";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import LeadPopup from "@/components/LeadPopup";
 
 const videos = [
   {
@@ -133,9 +134,8 @@ const SuccessStoriesPage = () => {
           </div>
         </div>
       </section>
-
+      <LeadPopup />
       <WhatsAppButton />
-      
       <Footer />
     </>
   );

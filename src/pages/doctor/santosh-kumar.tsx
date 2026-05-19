@@ -9,6 +9,7 @@ import doctorImg from "@/assets/Dr.-santosh.webp";
 import radiologistImg from "@/assets/Radiologist.webp";
 import pregnancyImg from "@/assets/Pregnancy.webp";
 import gynecologyImg from "@/assets/Gynecology-2.webp";
+import LeadPopup from "@/components/LeadPopup";
 
 const pregnancyServices = [
   "Early pregnancy scan",
@@ -276,9 +277,8 @@ const DrSantoshPage = () => {
           </div>
         </div>
       </section>
-
-      
       <WhatsAppButton />
+      <LeadPopup />
       <Footer />
     </>
   );
