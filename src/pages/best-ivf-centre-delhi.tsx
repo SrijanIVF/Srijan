@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import LeadPopup from "@/components/LeadPopup";
 import centreImg from "@/assets/Centre-img-delhi.jpeg";
-import {MapPin, Phone } from "lucide-react";
+import { MapPin, Phone } from "lucide-react";
 const doctors = [
     {
         img: doc1,
@@ -920,28 +920,24 @@ const BestIVFCentreDelhi = () => {
 
                             </div>
 
-                            <div className="flex flex-col sm:flex-row gap-4">
+                            <div className="flex flex-col gap-3 sm:flex-row sm:gap-4 w-full">
 
                                 <a
                                     href="tel:+919711748080"
-                                    className="flex-1 h-12 rounded-xl bg-pink-600 hover:bg-pink-700 text-white text-sm font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-md"
+                                    className="w-full sm:flex-1 h-12 rounded-xl bg-pink-600 hover:bg-pink-700 text-white text-sm font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-md"
                                 >
-                                    <>
-                                        <Phone className="w-4 h-4" />
-                                        Call Now
-                                    </>
+                                    <Phone className="w-4 h-4" />
+                                    Call Now
                                 </a>
 
                                 <a
                                     href="https://maps.google.com/?q=Shop+No.2,+Khasra+No.+585,+Mayur+Vihar+Phase+1,+Delhi"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex-1 h-12 rounded-xl border border-pink-300 text-pink-600 text-sm font-semibold hover:bg-pink-50 transition-all duration-300 flex items-center justify-center gap-2"
+                                    className="w-full sm:flex-1 h-12 rounded-xl border border-pink-300 text-pink-600 text-sm font-semibold hover:bg-pink-50 transition-all duration-300 flex items-center justify-center gap-2"
                                 >
-                                    <>
-                                        <MapPin className="w-4 h-4" />
-                                        Get Direction
-                                    </>
+                                    <MapPin className="w-4 h-4" />
+                                    Get Direction
                                 </a>
 
                             </div>

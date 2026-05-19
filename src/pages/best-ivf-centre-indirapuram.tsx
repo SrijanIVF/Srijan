@@ -922,11 +922,11 @@ const BestIVFCentreIndirapuram = () => {
 
                             </div>
 
-                            <div className="flex flex-col sm:flex-row gap-4">
+                            <div className="flex flex-col gap-3 sm:flex-row sm:gap-4 w-full">
 
                                 <a
                                     href="tel:+919711748080"
-                                    className="flex-1 h-12 rounded-xl bg-pink-600 hover:bg-pink-700 text-white text-sm font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-md"
+                                    className="w-full sm:flex-1 h-12 rounded-xl bg-pink-600 hover:bg-pink-700 text-white text-sm font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-md"
                                 >
                                     <Phone className="w-4 h-4" />
                                     Call Now
@@ -936,7 +936,7 @@ const BestIVFCentreIndirapuram = () => {
                                     href="https://www.google.com/maps/place/Srijan+IVF+%26+Diagnostic+Centre+Pvt+Ltd/@28.6390524,77.3468784,17z/data=!3m1!4b1!4m6!3m5!1s0x390cfbdafeae2c53:0xdd2faeb815f28c5e!8m2!3d28.6390524!4d77.3494533!16s%2Fg%2F11xc_fq_0s?entry=ttu&g_ep=EgoyMDI2MDUxNy4wIKXMDSoASAFQAw%3D%3D"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex-1 h-12 rounded-xl border border-pink-300 text-pink-600 text-sm font-semibold hover:bg-pink-50 transition-all duration-300 flex items-center justify-center gap-2"
+                                    className="w-full sm:flex-1 h-12 rounded-xl border border-pink-300 text-pink-600 text-sm font-semibold hover:bg-pink-50 transition-all duration-300 flex items-center justify-center gap-2"
                                 >
                                     <MapPin className="w-4 h-4" />
                                     Get Direction
