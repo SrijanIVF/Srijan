@@ -11,7 +11,7 @@ const Footer = () => {
     <>
       {showPopup && <LeadPopup onClose={() => setShowPopup(false)} />}
 
-      <footer id="contact" className="pt-14 pb-8 text-white" style={{ backgroundColor: "#e1658a" }}>
+      <footer id="contact" className="pt-14 pb-[90px] md:pb-[110px] text-white" style={{ backgroundColor: "#e1658a" }}>
         <div className="container mx-auto grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
 
           <div className="col-span-2 lg:col-span-1">
@@ -174,6 +174,34 @@ const Footer = () => {
             All fertility services are provided only at registered clinics by licensed medical professionals
             as per applicable laws and regulations.
           </p>
+
+        </div>
+        <div className="hidden md:block fixed bottom-0 left-0 right-0 z-40">
+
+          <div className="bg-[#f1abcb] border-t border-white/10 shadow-[0_-4px_18px_rgba(0,0,0,0.15)]">
+
+            <div className="max-w-7xl mx-auto px-6 h-[64px] flex items-center justify-center gap-6">
+
+              <div className="flex items-center gap-3">
+                <h3 className="text-white text-lg font-semibold">
+                  Pay in Easy EMI @ 0% Interest Rate
+                </h3>
+
+              </div>
+
+              <button
+                onClick={() => setShowPopup(true)}
+                className="h-11 px-6 rounded-xl border border-pink-500 bg-white text-pink-600 hover:bg-pink-400 hover:text-white font-medium text-sm transition-all duration-300 flex items-center gap-2"              >
+
+                <ArrowRight className="h-4 w-4 rotate-[-45deg]" />
+
+                Book Appointment
+
+              </button>
+
+            </div>
+
+          </div>
 
         </div>
       </footer>

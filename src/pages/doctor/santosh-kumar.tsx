@@ -74,14 +74,15 @@ const faqs = [
   },
 ];
 
-const achievements = [
-  { number: "15+", label: "Years Experience" },
-  { number: "GB Pant", label: "Hospital Trained" },
-  { number: "LBS", label: "Hospital Trained" },
-  { number: "100%", label: "Safe Practices" },
-];
+// const achievements = [
+//   { number: "15+", label: "Years Experience" },
+//   { number: "GB Pant", label: "Hospital Trained" },
+//   { number: "LBS", label: "Hospital Trained" },
+//   { number: "100%", label: "Safe Practices" },
+// ];
 
 const DrSantoshPage = () => {
+  const [showLeadPopup, setShowLeadPopup] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
 
   return (
@@ -101,53 +102,109 @@ const DrSantoshPage = () => {
           </p>
         </div>
       </section>
+      <section className="relative w-full bg-gradient-to-br from-pink-50 via-white to-pink-100 py-20 px-6 overflow-hidden">
 
-      <section className="py-10 md:py-20 px-4 md:px-6 bg-pink-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="bg-white border border-pink-100 rounded-3xl p-6 md:p-12 flex flex-col md:flex-row gap-8 md:gap-10 items-center shadow-sm">
-            {/* Doctor Image */}
-            <div className="flex-shrink-0 flex justify-center w-full md:w-auto">
-              <div className="relative">
-                <div className="absolute inset-0 rounded-[60%_40%_60%_40%] bg-pink-200 scale-110 -z-10 opacity-60" />
-                <img
-                  src={doctorImg}
-                  alt="Dr. Santosh Kumar Arjun"
-                  className="w-44 h-52 md:w-64 md:h-72 object-cover object-top rounded-[60%_40%_60%_40%] border-[5px] border-white shadow-xl"
-                />
-              </div>
-            </div>
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-pink-100 opacity-40 -translate-y-1/2 translate-x-1/4 pointer-events-none" />
 
-            <div className="flex-1">
-              <h2 className="text-2xl md:text-4xl font-bold text-pink-600 mb-2 text-center md:text-left">Dr. Santosh Kumar Arjun</h2>
-              <div className="w-14 h-1 bg-pink-500 rounded-full mb-5 mx-auto md:mx-0" />
+        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-pink-200 opacity-30 translate-y-1/2 -translate-x-1/4 pointer-events-none" />
 
-              <div className="flex flex-col gap-2 mb-5">
-                <p className="text-sm">
-                  <span className="text-pink-600 font-bold">Speciality : </span>
-                  <span className="text-pink-500 font-semibold">Radiologist</span>
-                </p>
-                <p className="text-sm">
-                  <span className="text-pink-600 font-bold">Experience : </span>
-                  <span className="text-pink-500 font-semibold">15+ years</span>
-                </p>
-                <p className="text-sm">
-                  <span className="text-pink-600 font-bold">Qualification : </span>
-                  <span className="text-pink-500 font-semibold">MBBS, DNB (RADIODIAGNOSIS) Radiologist</span>
-                </p>
-              </div>
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center relative z-10">
 
-              <p className="text-gray-500 leading-relaxed text-sm mb-4">
-                Dr. Santosh Kumar Arjun, a seasoned radiologist in Delhi, offers over 15 years of experience and expertise in diagnosing and interpreting medical images. Holding qualifications in MBBS and DNB (Radiodiagnosis), Dr. Arjun leverages his impressive background at esteemed institutions like GB Pant Hospital and LBS Hospital to ensure the highest quality patient care.
-              </p>
-              <p className="text-gray-500 leading-relaxed text-sm">
-                Through his meticulous analysis of scans and X-rays, Dr. Arjun plays a vital role in pinpointing medical concerns and guiding effective treatment plans. His dedication to precision and patient well-being makes him a valuable asset in the field of radiology.
-              </p>
+          <div className="flex justify-center md:justify-start">
+            <div className="relative">
+
+              <div className="absolute -top-5 -left-5 w-full h-full rounded-[50%_50%_50%_30%] bg-pink-200 -z-10 opacity-60" />
+
+              <div className="absolute -bottom-3 -right-3 w-24 h-24 rounded-full bg-pink-400 opacity-20 -z-10" />
+
+              <img
+                src={doctorImg}
+                alt="Dr. Santosh Kumar Arjun"
+                className="w-72 h-72 md:w-96 md:h-96 object-cover object-top rounded-[50%_50%_50%_30%] border-[6px] border-white shadow-2xl"
+              />
+
             </div>
           </div>
+
+          <div>
+
+            <p className="text-xs font-semibold tracking-[4px] uppercase text-pink-400 mb-3">
+              Meet Our Expert
+            </p>
+
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
+              Dr. Santosh Kumar Arjun
+            </h1>
+
+            <div className="w-16 h-1 bg-pink-500 rounded-full mb-5" />
+
+            <div className="flex flex-col gap-2 mb-6">
+
+              <div className="flex items-center gap-3">
+                <span className="text-pink-500 font-semibold text-sm">
+                  Speciality:
+                </span>
+
+                <span className="bg-pink-100 text-pink-700 text-sm font-semibold px-3 py-1 rounded-full">
+                  Radiologist
+                </span>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <span className="text-pink-500 font-semibold text-sm">
+                  Experience:
+                </span>
+
+                <span className="bg-pink-100 text-pink-700 text-sm font-semibold px-3 py-1 rounded-full">
+                  15+ Years
+                </span>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <span className="text-pink-500 font-semibold text-sm">
+                  Qualification:
+                </span>
+
+                <span className="bg-pink-100 text-pink-700 text-sm font-semibold px-3 py-1 rounded-full">
+                  MBBS, DNB (Radiodiagnosis)
+                </span>
+              </div>
+
+            </div>
+
+            <p className="text-gray-500 leading-relaxed mb-4 text-sm">
+              Dr. Santosh Kumar Arjun, a seasoned radiologist in Delhi, offers over 15 years of experience and expertise in diagnosing and interpreting medical images. Holding qualifications in MBBS and DNB (Radiodiagnosis), Dr. Arjun leverages his impressive background at esteemed institutions like GB Pant Hospital and LBS Hospital to ensure the highest quality patient care.
+            </p>
+
+            <p className="text-gray-500 leading-relaxed text-sm mb-6">
+              Through his meticulous analysis of scans and X-rays, Dr. Arjun plays a vital role in pinpointing medical concerns and guiding effective treatment plans. His dedication to precision and patient well-being makes him a valuable asset in the field of radiology.
+            </p>
+
+            <div className="flex gap-3 flex-wrap">
+
+              <button
+                onClick={() => setShowLeadPopup(true)}
+                className="bg-pink-600 text-white px-6 py-3 rounded-xl font-semibold text-sm hover:bg-pink-700 transition-colors duration-200 shadow-md"
+              >
+                Book Consultation
+              </button>
+
+              <a
+                href="tel:+919711748080"
+                className="border border-pink-300 text-pink-600 px-6 py-3 rounded-xl font-semibold text-sm hover:bg-pink-50 transition-colors duration-200 inline-flex items-center justify-center"
+              >
+                Call Us Now
+              </a>
+
+            </div>
+
+          </div>
+
         </div>
+
       </section>
 
-      <section className="bg-pink-600 py-8 md:py-10 px-4 md:px-6">
+      {/* <section className="bg-pink-600 py-8 md:py-10 px-4 md:px-6">
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {achievements.map((a, i) => (
             <div key={i} className="text-center">
@@ -156,7 +213,7 @@ const DrSantoshPage = () => {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       <section className="py-12 md:py-20 px-4 md:px-6 bg-white">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 md:gap-14 items-center">
@@ -279,6 +336,9 @@ const DrSantoshPage = () => {
       </section>
       <WhatsAppButton />
       <LeadPopup />
+      {showLeadPopup && (
+        <LeadPopup onClose={() => setShowLeadPopup(false)} />
+      )}  
       <Footer />
     </>
   );

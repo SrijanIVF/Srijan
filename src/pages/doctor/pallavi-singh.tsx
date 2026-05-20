@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import SEOMetaHead from "@/components/SEOMetaHead";
 import Reviews from "@/components/Reviews";
@@ -26,14 +27,17 @@ const treatmentTable = [
   { param: "Approx. Success Rates", value: "80-90%" },
 ];
 
-const achievements = [
-  { number: "23+", label: "Years Experience" },
-  { number: "10K+", label: "Babies Delivered" },
-  { number: "80-90%", label: "Success Rate" },
-  { number: "5000+", label: "IVF Cycles Done" },
-];
+// const achievements = [
+//   { number: "23+", label: "Years Experience" },
+//   { number: "10K+", label: "Babies Delivered" },
+//   { number: "80-90%", label: "Success Rate" },
+//   { number: "5000+", label: "IVF Cycles Done" },
+// ];
+
 
 const DrPallaviPage = () => {
+  const [showLeadPopup, setShowLeadPopup] = useState(false);
+
   return (
     <>
       <SEOMetaHead
@@ -100,10 +104,10 @@ const DrPallaviPage = () => {
                 alt="Dr. Pallavi Singh"
                 className="w-72 h-72 md:w-96 md:h-96 object-cover object-top rounded-[50%_50%_50%_30%] border-[6px] border-white shadow-2xl"
               />
-              <div className="absolute bottom-4 right-0 bg-white border border-pink-200 rounded-2xl px-4 py-3 shadow-lg">
+              {/* <div className="absolute bottom-4 right-0 bg-white border border-pink-200 rounded-2xl px-4 py-3 shadow-lg">
                 <p className="text-pink-600 font-bold text-sm">23+ Years</p>
                 <p className="text-gray-500 text-xs">of Excellence</p>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -115,7 +119,7 @@ const DrPallaviPage = () => {
             <div className="flex flex-col gap-2 mb-6">
               <div className="flex items-center gap-3">
                 <span className="text-pink-500 font-semibold text-sm">Speciality:</span>
-                <span className="bg-pink-100 text-pink-700 text-sm font-semibold px-3 py-1 rounded-full">IVF Specialist</span>
+                <span className="bg-pink-100 text-pink-700 text-sm font-semibold px-3 py-1 rounded-full">Senior IVF Specialist</span>
               </div>
               <div className="flex items-center gap-3">
                 <span className="text-pink-500 font-semibold text-sm">Experience:</span>
@@ -135,7 +139,10 @@ const DrPallaviPage = () => {
             </p>
 
             <div className="flex gap-3 flex-wrap">
-              <button className="bg-pink-600 text-white px-6 py-3 rounded-xl font-semibold text-sm hover:bg-pink-700 transition-colors duration-200 shadow-md">
+              <button
+                onClick={() => setShowLeadPopup(true)}
+                className="bg-pink-600 text-white px-6 py-3 rounded-xl font-semibold text-sm hover:bg-pink-700 transition-colors duration-200 shadow-md"
+              >
                 Book Consultation
               </button>
               <button className="border border-pink-300 text-pink-600 px-6 py-3 rounded-xl font-semibold text-sm hover:bg-pink-50 transition-colors duration-200">
@@ -145,17 +152,17 @@ const DrPallaviPage = () => {
           </div>
         </div>
       </section>
-
-      <section className="bg-pink-600 py-10 px-6">
+      {/* 
+      <section className="bg-pink-400 py-10 px-6">
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
           {achievements.map((a, i) => (
             <div key={i} className="text-center">
               <p className="text-3xl md:text-4xl font-bold text-white mb-1">{a.number}</p>
-              <p className="text-pink-200 text-sm font-medium">{a.label}</p>
+              <p className="text-white text-sm font-medium">{a.label}</p>
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       <section className="py-20 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
@@ -192,8 +199,7 @@ const DrPallaviPage = () => {
             </p>
           </div>
 
-          <div className="bg-pink-600 rounded-3xl p-10 text-white flex flex-col gap-4">
-            <p className="text-pink-200 text-sm font-semibold uppercase tracking-widest">Why Choose Dr. Pallavi</p>
+          <div className="bg-gradient-to-br from-pink-400/95 to-rose-500/90 rounded-3xl p-10 text-white flex flex-col gap-4 shadow-xl">            <p className="text-pink-200 text-sm font-semibold uppercase tracking-widest">Why Choose Dr. Pallavi</p>
             <h3 className="text-2xl md:text-3xl font-bold leading-snug">
               Trusted by Thousands of Families Across Delhi NCR
             </h3>
@@ -268,7 +274,10 @@ const DrPallaviPage = () => {
                     <p className="text-xs text-gray-500 mt-1">Consultation</p>
                   </div>
                 </div>
-                <button className="w-full mt-5 bg-pink-600 text-white py-3 rounded-xl font-semibold text-sm hover:bg-pink-700 transition-colors duration-200">
+                <button
+                  onClick={() => setShowLeadPopup(true)}
+                  className="w-full mt-5 bg-pink-600 text-white py-3 rounded-xl font-semibold text-sm hover:bg-pink-700 transition-colors duration-200"
+                >
                   Book Free Consultation
                 </button>
               </div>
@@ -279,6 +288,9 @@ const DrPallaviPage = () => {
       <Reviews />
       <WhatsAppButton />
       <Leadpopup />
+      {showLeadPopup && (
+        <Leadpopup onClose={() => setShowLeadPopup(false)} />
+      )}
       <Footer />
     </>
   );

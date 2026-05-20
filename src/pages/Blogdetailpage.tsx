@@ -169,7 +169,7 @@ const BlogDetailPage = () => {
                           apiFormData.append("name", name);
                           apiFormData.append("mobile", phone);
                           apiFormData.append("source_name", "BlogForm");
-                          apiFormData.append("city_name", "Delhi");
+                          apiFormData.append("city_name", "India");
 
                           const response = await fetch(
                             "https://api.srijanivfcentre.com/api/v1/lead/generate-lead/",
