@@ -4,12 +4,13 @@ import Reviews from "@/components/Reviews";
 import Footer from "@/components/Footer";
 //import Callus from "@/components/callbtn";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import bannerImg from "@/assets/About-us-banner.jpg";
+import bannerImg from "@/assets/docimg.png";
 import doctorImg from "@/assets/Dr.-santosh.webp";
 import radiologistImg from "@/assets/Radiologist.webp";
 import pregnancyImg from "@/assets/Pregnancy.webp";
 import gynecologyImg from "@/assets/Gynecology-2.webp";
 import LeadPopup from "@/components/LeadPopup";
+import { Phone } from "lucide-react";
 
 const pregnancyServices = [
   "Early pregnancy scan",
@@ -88,19 +89,36 @@ const DrSantoshPage = () => {
   return (
     <>
       <Navbar />
-      <section className="relative w-full h-[50vh] md:h-[65vh] flex items-center justify-center text-center">
-        <img src={bannerImg} alt="Dr. Santosh Kumar Arjun" className="absolute inset-0 w-full h-full object-cover brightness-40" />
-        <div className="absolute inset-0 bg-gradient-to-b from-pink-900/40 to-black/50" />
-        <div className="relative z-10 text-white px-4 max-w-3xl mx-auto">
-          <p className="text-xs font-semibold tracking-[4px] uppercase text-pink-300 mb-3 md:mb-4">Meet Our Expert</p>
-          <h1 className="text-2xl md:text-6xl font-bold leading-tight mb-3 md:mb-5">
-            Dr. Santosh Kumar Arjun<br />
-            <span className="text-pink-300 text-lg md:text-4xl font-semibold">Radiologist — MBBS, DNB</span>
-          </h1>
-          <p className="text-sm md:text-lg text-white/80">
-            15+ years of expertise in diagnostic radiology and fetal imaging services in New Delhi.
-          </p>
+      <section className="relative w-full min-h-[78vh] md:min-h-[80vh] overflow-hidden flex items-center">
+        <img
+          src={bannerImg}
+          alt="Dr. Santosh Kumar Arjun"
+          className="absolute inset-0 w-full h-full object-cover object-[78%_top] md:object-right-top"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#fff7fa]/60 via-[#fff0f5]/40 to-[#f7b4cb]/10" />
+        <div className="absolute -left-20 bottom-0 w-[220px] md:w-[300px] h-[220px] md:h-[300px] bg-pink-300/30 blur-3xl rounded-full" />
+        <div className="absolute top-0 right-0 w-[220px] md:w-[340px] h-[220px] md:h-[340px] bg-pink-200/20 blur-3xl rounded-full" />
+        <div className="relative z-10 container mx-auto px-4 md:px-6">
+
+          <div className="max-w-full md:max-w-xl pt-24 md:pt-0">
+            <p className="inline-flex items-center gap-2 bg-pink-100/90 backdrop-blur-sm text-pink-600 px-4 py-2 rounded-full text-[11px] md:text-sm font-semibold tracking-wide mb-4 md:mb-6 shadow-sm">
+              <span className="h-2 w-2 rounded-full bg-pink-500"></span>
+              Meet Our Expert
+            </p>
+            <h1 className="text-[28px] leading-[36px] md:text-6xl font-bold md:leading-tight text-[#2f2340] mb-3 md:mb-4">
+              Dr. Santosh <br className="hidden md:block" />
+              Kumar Arjun
+            </h1>
+            <h2 className="text-base md:text-3xl font-semibold text-[#e1658a] mb-4 md:mb-5">
+              Radiologist — MBBS, DNB
+            </h2>
+            <p className="text-sm md:text-lg leading-relaxed text-[#5b5565] max-w-md">
+              15+ years of expertise in diagnostic radiology and fetal imaging
+              services in New Delhi with compassionate and advanced fertility care.
+            </p>
+          </div>
         </div>
+
       </section>
       <section className="relative w-full bg-gradient-to-br from-pink-50 via-white to-pink-100 py-20 px-6 overflow-hidden">
 
@@ -338,7 +356,7 @@ const DrSantoshPage = () => {
       <LeadPopup />
       {showLeadPopup && (
         <LeadPopup onClose={() => setShowLeadPopup(false)} />
-      )}  
+      )}
       <Footer />
     </>
   );

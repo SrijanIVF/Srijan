@@ -41,6 +41,8 @@ import LowRiskPregnancy from "./pages/treatments/low-risk-pregnancy.tsx";
 import NormalDelivery from "./pages/treatments/normal-delivery.tsx";
 import BestIvfCentreDelhi from "./pages/best-ivf-centre-delhi.tsx";
 import BestIvfCentreIndirapuram from "./pages/best-ivf-centre-indirapuram.tsx";
+import Indexlp from "./pages/lp/Index.tsx";
+import Indexfb from "./pages/fb/lp/Index.tsx";
 
 const queryClient = new QueryClient();
 
@@ -89,6 +91,8 @@ const App = () => (
           <Route path="/normal-delivery" element={<NormalDelivery />} />
           <Route path="/best-ivf-centre-delhi" element={<BestIvfCentreDelhi />} />
           <Route path="/best-ivf-centre-indirapuram" element={<BestIvfCentreIndirapuram />} />
+          <Route path="/lp" element={<Indexlp />} />
+          <Route path="/fb/lp" element={<Indexfb />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
