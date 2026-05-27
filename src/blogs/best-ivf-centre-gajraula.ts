@@ -133,11 +133,13 @@ Agar aap Gajraula mein best IVF centre ki talash mein hain, to Srijan IVF Centre
 
 Facebook👉 https://www.facebook.com/srijanfertility
 
-Instagram👉 https://www.instagram.com/srijan.ivf/
+Instagram👉 https://www.instagram.com/srijan.ivfcentre/
+
 
 Youtube👉 https://www.youtube.com/@srijanfertilitycentre
 
 Twitter👉 https://x.com/srijan_ivf
+
 
 ## FAQs: IVF in Gajraula
 

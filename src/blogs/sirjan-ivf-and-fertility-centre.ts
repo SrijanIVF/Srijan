@@ -125,13 +125,16 @@ Phone No.: +91-971 174 8080
 
 Facebook👉 https://www.facebook.com/srijanivfcentre
 
-Instagram👉 https://www.instagram.com/srijan.ivf/
+
+Instagram👉 https://www.instagram.com/srijan.ivfcentre/
+
 
 Youtube👉 https://www.youtube.com/@srijanfertilitycentre
 
 Twitter👉 https://x.com/srijan_ivf
 
-LinkedIn👉 https://www.linkedin.com/in/srijan-ivf/
+
+LinkedIn👉 https://www.linkedin.com/company/srijan-ivf-centre/
 
 `,
 };

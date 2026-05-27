@@ -25,8 +25,7 @@ const Footer = () => {
             <div className="mt-5 flex gap-3">
 
               <a
-                href="__https://www.facebook.com/srijanivfcentre_
-_"
+                href="https://www.facebook.com/srijanivfcentre/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-10 w-10 rounded-full bg-white/20 hover:bg-white hover:text-[#e1658a] grid place-items-center transition"
@@ -35,7 +34,7 @@ _"
               </a>
 
               <a
-                href="_https://www.instagram.com/srijan.ivfcentre/_"
+                href="https://www.instagram.com/srijan.ivfcentre/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-10 w-10 rounded-full bg-white/20 hover:bg-white hover:text-[#e1658a] grid place-items-center transition"
@@ -44,7 +43,7 @@ _"
               </a>
 
               <a
-                href="__https://www.youtube.com/@srijanfertilitycentre__"
+                href="https://www.youtube.com/@srijanfertilitycentre"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-10 w-10 rounded-full bg-white/20 hover:bg-white hover:text-[#e1658a] grid place-items-center transition"
@@ -53,8 +52,7 @@ _"
               </a>
 
               <a
-                href="__https://x.com/srijan_ivf_
-_"
+                href="https://x.com/srijan_ivf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-10 w-10 rounded-full bg-white/20 hover:bg-white hover:text-[#e1658a] grid place-items-center transition"
@@ -63,7 +61,7 @@ _"
               </a>
 
               <a
-                href="_https://www.linkedin.com/company/srijan-ivf-centre/_"
+                href="https://www.linkedin.com/company/srijan-ivf-centre/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-10 w-10 rounded-full bg-white/20 hover:bg-white hover:text-[#e1658a] grid place-items-center transition"

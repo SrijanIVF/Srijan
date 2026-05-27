@@ -148,13 +148,16 @@ Reach out today for a free consultation and take the first step towards building
 
 Facebook👉 https://www.facebook.com/srijanivfcentre
 
-Instagram👉 https://www.instagram.com/srijan.ivf/
+
+Instagram👉 https://www.instagram.com/srijan.ivfcentre/
+
 
 Youtube👉 https://www.youtube.com/@srijanfertilitycentre
 
 Twitter👉 https://x.com/srijan_ivf
 
-Linkedin👉 https://www.linkedin.com/in/srijan-ivf/
+
+Linkedin👉 https://www.linkedin.com/company/srijan-ivf-centre/
 
 `,
 };

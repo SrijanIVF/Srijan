@@ -158,11 +158,13 @@ Still confused about where to start? Don’t worry – our experts are here to g
 
 Facebook👉 https://www.facebook.com/srijanfertility
 
-Instagram👉 https://www.instagram.com/srijan.ivf/
+Instagram👉 https://www.instagram.com/srijan.ivfcentre/
+
 
 Youtube👉 https://www.youtube.com/@srijanfertilitycentre
 
 Twitter👉 https://x.com/srijan_ivf
+
 
 ## Who Should Consult a Fertility Specialist?
 
