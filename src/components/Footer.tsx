@@ -25,7 +25,8 @@ const Footer = () => {
             <div className="mt-5 flex gap-3">
 
               <a
-                href="https://www.facebook.com/srijanivfcentre"
+                href="__https://www.facebook.com/srijanivfcentre_
+_"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-10 w-10 rounded-full bg-white/20 hover:bg-white hover:text-[#e1658a] grid place-items-center transition"
@@ -34,7 +35,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://www.instagram.com/srijan.ivf/"
+                href="_https://www.instagram.com/srijan.ivfcentre/_"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-10 w-10 rounded-full bg-white/20 hover:bg-white hover:text-[#e1658a] grid place-items-center transition"
@@ -43,7 +44,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://www.youtube.com/@srijanfertilitycentre"
+                href="__https://www.youtube.com/@srijanfertilitycentre__"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-10 w-10 rounded-full bg-white/20 hover:bg-white hover:text-[#e1658a] grid place-items-center transition"
@@ -52,7 +53,8 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://x.com/srijan_ivf"
+                href="__https://x.com/srijan_ivf_
+_"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-10 w-10 rounded-full bg-white/20 hover:bg-white hover:text-[#e1658a] grid place-items-center transition"
@@ -61,7 +63,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://www.linkedin.com/in/srijan-ivf"
+                href="_https://www.linkedin.com/company/srijan-ivf-centre/_"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-10 w-10 rounded-full bg-white/20 hover:bg-white hover:text-[#e1658a] grid place-items-center transition"

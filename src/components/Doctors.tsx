@@ -7,7 +7,7 @@ import {
   Star,
 } from "lucide-react";
 
-import doc1 from "@/assets/Dr.-Pallavisingh.webp";
+import doc1 from "@/assets/Dr pallavi srijanivf.png";
 import doc2 from "@/assets/Dr.-santosh.webp";
 
 const doctors = [

@@ -5,7 +5,7 @@ import SEOMetaHead from "@/components/SEOMetaHead";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { useState } from "react";
-import doc1 from "@/assets/Dr.-Pallavisingh.webp";
+import doc1 from "@/assets/Dr pallavi srijanivf.png";
 import doc2 from "@/assets/Dr.-santosh.webp";
 import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
@@ -732,7 +732,7 @@ const BestIVFCentreDelhi = () => {
                                 key={i}
                                 className="bg-white border border-pink-100 rounded-3xl overflow-hidden hover:shadow-xl hover:border-pink-300 transition-all duration-300"
                             >
-                                <div className="h-[280px] sm:h-72 bg-pink-50 overflow-hidden">
+                                <div className="h-[340px] sm:h-[380px] bg-pink-50 overflow-hidden">
                                     <img
                                         src={d.img}
                                         alt={d.name}

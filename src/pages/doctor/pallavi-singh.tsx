@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 //import Callus from "@/components/callbtn";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import bannerImg from "@/assets/doctorimg.png";
-import doctorImg from "@/assets/Dr.-Pallavisingh.webp";
+import doctorImg from "@/assets/Dr pallavi srijanivf.png";
 import Leadpopup from "@/components/LeadPopup";
 import { Phone } from "lucide-react";
 
