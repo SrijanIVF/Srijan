@@ -66,13 +66,13 @@ const Hero = () => {
               Trusted by 10,000+ happy parents
             </span>
 
-            <h1 className="mt-6 font-display text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.05]">
+            <div className="mt-6 font-display text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.05]">
               Your Parenthood <br />
               Journey{" "}
               <span className="text-gradient not-italic">
                 Starts Here
               </span>
-            </h1>
+            </div>
 
             <p className="mt-6 text-lg text-muted-foreground max-w-xl">
               Compassionate, world-class fertility care backed by 20+ years of
@@ -182,11 +182,10 @@ const FormFields = ({
         value={form.name}
         onChange={onName}
         placeholder="Your name"
-        className={`w-full px-3 py-2 rounded-xl border bg-background text-sm outline-none transition ${
-          errors.name
+        className={`w-full px-3 py-2 rounded-xl border bg-background text-sm outline-none transition ${errors.name
             ? "border-red-400 focus:border-red-400"
             : "border-input focus:border-primary"
-        }`}
+          }`}
       />
 
       <ErrMsg msg={errors.name} />
@@ -199,11 +198,10 @@ const FormFields = ({
         placeholder="Phone number"
         maxLength={10}
         inputMode="numeric"
-        className={`w-full px-3 py-2 rounded-xl border bg-background text-sm outline-none transition ${
-          errors.phone
+        className={`w-full px-3 py-2 rounded-xl border bg-background text-sm outline-none transition ${errors.phone
             ? "border-red-400 focus:border-red-400"
             : "border-input focus:border-primary"
-        }`}
+          }`}
       />
 
       <ErrMsg msg={errors.phone} />
