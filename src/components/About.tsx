@@ -1,5 +1,5 @@
 import { Award, Users, Baby, Stethoscope } from "lucide-react";
-import { Link } from "react-router-dom"; //
+import { Link } from "react-router-dom";
 
 const stats = [
   { icon: Award, value: "23+", label: "Years Experience" },
@@ -8,7 +8,18 @@ const stats = [
   { icon: Users, value: "50+", label: "Expert Doctors" },
 ];
 
-const About = () => (
+type AboutProps = {
+  heading?: string;
+  description?: string;
+};
+
+const About = ({
+  heading = "Srijan IVF Centre: Your Trusted Partner for Fertility Treatment in Delhi NCR",
+
+  description = `For couples who are dreaming of parenthood, Srijan IVF offers personalized and advanced fertility care designed to support every step of your IVF journey. We are recognized for trusted and personalized fertility treatment in Delhi. Our experienced specialists provide advanced procedures including IVF, IUI, ICSI, Laparoscopy, Hysteroscopy, TESA/PESA, and other customized fertility solutions tailored to your unique medical needs.
+
+At Srijan IVF, we combine medical excellence with emotional support to help you move closer to the joy of starting or growing your family.`,
+}: AboutProps) => (
   <section id="about" className="py-10 gradient-soft">
     <div className="container mx-auto grid lg:grid-cols-2 gap-16 items-center">
       <div>
@@ -16,17 +27,12 @@ const About = () => (
           About Srijan IVF
         </span>
 
-        <h2 className="mt-4 font-display text-4xl md:text-5xl font-semibold leading-tight">
-          Srijan IVF:{" "}
-          <span className="text-gradient not-italic">
-            Your Trusted Partner for Fertility in Delhi
-          </span>
-        </h2>
-        <p className="mt-6 text-muted-foreground leading-relaxed">
-          Delhi couples seeking to build their families, find hope at Srijan IVF.
-          We are a leading fertility clinic offering advanced procedures like IVF,
-          IUI, ICSI, Laparoscopy, Hysteroscopy, TESA/PESA, and various other
-          treatment options tailored to your individual needs.
+        <h1 className="mt-4 font-display text-4xl md:text-5xl font-semibold leading-tight">
+          {heading}
+        </h1>
+
+        <p className="mt-6 text-muted-foreground leading-relaxed whitespace-pre-line">
+          {description}
         </p>
 
         <Link to="/about-us">
@@ -46,8 +52,14 @@ const About = () => (
             <div className="h-12 w-12 rounded-2xl gradient-primary grid place-items-center mb-4">
               <s.icon className="h-6 w-6 text-primary-foreground" />
             </div>
-            <div className="font-display text-3xl font-bold">{s.value}</div>
-            <div className="text-sm text-muted-foreground mt-1">{s.label}</div>
+
+            <div className="font-display text-3xl font-bold">
+              {s.value}
+            </div>
+
+            <div className="text-sm text-muted-foreground mt-1">
+              {s.label}
+            </div>
           </div>
         ))}
       </div>
