@@ -6,6 +6,22 @@ import LeadPopup from "@/components/LeadPopup";
 const Footer = () => {
     const [showPopup, setShowPopup] = useState(false);
 
+    const pathname = window.location.pathname;
+
+    let phoneNumber = "971 174 8080";
+
+    if (
+        pathname.includes("/fb/lp") ||
+        pathname.includes("/fb/lp/best-ivf-centre")
+    ) {
+        phoneNumber = "971 167 5252";
+    } else if (
+        pathname.includes("/lp") ||
+        pathname.includes("/lp/best-ivf-centre")
+    ) {
+        phoneNumber = "971 167 8282";
+    }
+
     return (
         <>
             {showPopup && <LeadPopup onClose={() => setShowPopup(false)} />}
@@ -56,11 +72,11 @@ const Footer = () => {
                                     </a>
 
                                     <a
-                                        href="tel:+919711748080"
+                                        href={`tel:+91${phoneNumber}`}
                                         className="inline-flex items-center justify-center gap-2 bg-white text-[#e1658a] rounded-full px-4 md:px-6 py-2.5 md:py-3 text-sm md:text-base font-medium hover:scale-[1.02] transition duration-300 shadow-lg w-fit"
                                     >
                                         <Phone className="h-4 w-4 md:h-5 md:w-5" />
-                                        +91 971 174 8080
+                                        +91 {phoneNumber}
                                     </a>
 
                                 </div>
@@ -99,7 +115,7 @@ const Footer = () => {
             </footer>
             <div className="fixed bottom-0 left-0 right-0 z-40 flex md:hidden shadow-[0_-2px_12px_rgba(0,0,0,0.15)]">
                 <a
-                    href="tel:+91971 174 8080"
+                    href={`tel:+91${phoneNumber}`}
                     className="flex-1 flex items-center justify-center gap-2 font-semibold text-sm py-4 transition active:opacity-80"
                     style={{ backgroundColor: "#b5446a", color: "#fff" }}
                 >
@@ -121,6 +137,6 @@ const Footer = () => {
             </div>
         </>
     );
-}
+};
 
 export default Footer;
