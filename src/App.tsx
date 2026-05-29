@@ -91,8 +91,8 @@ const App = () => (
           <Route path="/normal-delivery" element={<NormalDelivery />} />
           <Route path="/best-ivf-centre-delhi" element={<BestIvfCentreDelhi />} />
           <Route path="/best-ivf-centre-indirapuram" element={<BestIvfCentreIndirapuram />} />
-          <Route path="/lp" element={<Indexlp />} />
-          <Route path="/fb/lp" element={<Indexfb />} />
+          <Route path="/lp/best-ivf-centre-india" element={<Indexlp />} />
+          <Route path="/fb/lp/best-ivf-centre-india" element={<Indexfb />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import {
   ChevronLeft,
   ChevronRight,
@@ -57,16 +58,35 @@ const doctors = [
   },
 ];
 
+
 const Doctors = () => {
+  const location = useLocation();
+
+  const pathname = location.pathname
+    .toLowerCase()
+    .replace(/^\/|\/$/g, "");
+
+  const isLandingPage =
+    pathname.startsWith("lp") ||
+    pathname.startsWith("fb/lp") ||
+    pathname.includes("/lp/");
+
   const [current, setCurrent] = useState(0);
 
   const prev = () =>
-    setCurrent((c) => (c === 0 ? doctors.length - 1 : c - 1));
+    setCurrent((c) => (c === 0 ? visibleDoctors.length - 1 : c - 1));
 
   const next = () =>
-    setCurrent((c) => (c === doctors.length - 1 ? 0 : c + 1));
+    setCurrent((c) => (c === visibleDoctors.length - 1 ? 0 : c + 1));
+  const visibleDoctors = isLandingPage
+    ? doctors.filter(
+      (doctor) =>
+        doctor.name !==
+        "Dr. Santosh Kumar Arjun"
+    )
+    : doctors;
 
-  const d = doctors[current];
+  const d = visibleDoctors[current];
 
   return (
     <section id="doctors" className="py-6 sm:py-4 bg-pink-50">
@@ -170,44 +190,47 @@ const Doctors = () => {
           </div>
         </div>
 
-        <div className="flex items-center justify-center gap-4 sm:gap-6 mt-8 sm:mt-10">
-          <button
-            type="button"
-            title="Previous Doctor"
-            aria-label="Previous Doctor"
-            onClick={prev}
-            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-pink-300 flex items-center justify-center text-pink-600 hover:bg-pink-100 transition"
-          >
-            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
-          </button>
+        {visibleDoctors.length > 1 && (
+          <div className="flex items-center justify-center gap-4 sm:gap-6 mt-8 sm:mt-10">
 
-          <div className="flex gap-2">
-            {doctors.map((doctor, i) => (
-              <button
-                key={i}
-                type="button"
-                title={`Go to ${doctor.name}`}
-                aria-label={`Go to ${doctor.name}`}
-                onClick={() => setCurrent(i)}
-                className={`h-2 rounded-full transition-all ${
-                  i === current
-                    ? "w-6 sm:w-8 bg-pink-600"
-                    : "w-2 bg-pink-200"
-                }`}
-              />
-            ))}
+            <button
+              type="button"
+              title="Previous Doctor"
+              aria-label="Previous Doctor"
+              onClick={prev}
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-pink-300 flex items-center justify-center text-pink-600 hover:bg-pink-100 transition"
+            >
+              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+            </button>
+
+            <div className="flex gap-2">
+              {visibleDoctors.map((doctor, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  title={`Go to ${doctor.name}`}
+                  aria-label={`Go to ${doctor.name}`}
+                  onClick={() => setCurrent(i)}
+                  className={`h-2 rounded-full transition-all ${i === current
+                      ? "w-6 sm:w-8 bg-pink-600"
+                      : "w-2 bg-pink-200"
+                    }`}
+                />
+              ))}
+            </div>
+
+            <button
+              type="button"
+              title="Next Doctor"
+              aria-label="Next Doctor"
+              onClick={next}
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-pink-300 flex items-center justify-center text-pink-600 hover:bg-pink-100 transition"
+            >
+              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+            </button>
+
           </div>
-
-          <button
-            type="button"
-            title="Next Doctor"
-            aria-label="Next Doctor"
-            onClick={next}
-            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-pink-300 flex items-center justify-center text-pink-600 hover:bg-pink-100 transition"
-          >
-            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
-          </button>
-        </div>
+        )}
       </div>
     </section>
   );

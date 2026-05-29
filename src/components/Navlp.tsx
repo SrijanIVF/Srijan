@@ -37,24 +37,20 @@ const Navbar = () => {
 
     return (
         <header
-            className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-                scrolled
+            className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled
                     ? "bg-white/90 backdrop-blur-lg shadow-md"
                     : "bg-transparent"
-            }`}
+                }`}
         >
             <nav className="container mx-auto flex items-center justify-between py-3 px-4">
 
-                <Link
-                    to="/"
-                    className="flex items-center"
-                >
+                <div className="flex items-center">
                     <img
                         src={logo}
                         alt="Srijan IVF"
                         className="h-9 sm:h-11 w-auto object-contain"
                     />
-                </Link>
+                </div>
 
                 <div className="flex items-center gap-3 lg:hidden">
                     <a
