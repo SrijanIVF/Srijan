@@ -83,7 +83,7 @@ const Index = () => (
           address: {
             "@type": "PostalAddress",
             streetAddress:
-              "Plat No. 7, Abhay Khand 1, Pocket 2, Abhay Khand, Indirapuram",
+              "Plot No. 7, Abhay Khand 1, Pocket 2, Abhay Khand, Indirapuram",
             addressLocality: "Ghaziabad",
             addressRegion: "Uttar Pradesh",
             postalCode: "201020",
