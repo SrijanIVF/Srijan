@@ -111,6 +111,16 @@ const Footer = () => {
                   <span>»</span> Privacy Policy
                 </Link>
               </li>
+              {/* <li>
+                <Link to="/termsandconditions" className="hover:text-white transition flex items-center gap-2">
+                  <span>»</span> Terms & Conditions
+                </Link>
+              </li> */}
+              <li>
+                <span className="flex items-center gap-2">
+                  <span>»</span> Terms & Conditions
+                </span>
+              </li>
             </ul>
           </div>
           <div>
@@ -144,7 +154,7 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-white/80">
               <li className="flex gap-3">
                 <MapPin className="h-4 w-4 mt-0.5 text-white shrink-0" />
-                Shop No.2, Khasra No. 585, kalyan Vyas, 202/1, Khichripur Rd, Mayur Vihar Phase I, Kalyanvas, Kalyan Puri, Delhi, 110091
+                Plat No. 7, Abhay Khand 1, Pocket 2, Abhay Khand, Indirapuram, Ghaziabad, Uttar Pradesh 201020, Ghaziabad, Uttar Pradesh 201020.
               </li>
               <li className="flex gap-3">
                 <Phone className="h-4 w-4 mt-0.5 text-white shrink-0" />
@@ -161,7 +171,7 @@ const Footer = () => {
 
         <div className="container mx-auto border-t border-white/20 mt-12 pt-6 text-center text-sm text-white/70 pb-20 md:pb-0 px-4">
           <p className="mb-3">
-            © 2021-26 Srijan IVF. All rights reserved.
+            © 2026 Srijan IVF. All rights reserved.
           </p>
 
           <p className="text-xs md:text-sm leading-relaxed max-w-5xl mx-auto text-white/80">
