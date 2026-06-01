@@ -138,6 +138,7 @@ type HeroFormState = {
   name: string;
   phone: string;
   treatment: string;
+  city: string;
 };
 
 type HeroFormErrors = Partial<Record<keyof HeroFormState, string>>;
@@ -146,6 +147,7 @@ const initialState: HeroFormState = {
   name: "",
   phone: "",
   treatment: "",
+  city: "",
 };
 
 const ErrMsg = ({
@@ -166,6 +168,8 @@ interface FormFieldsProps {
   onName: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onPhone: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onTreatment: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  onCity: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  isLandingPage: boolean;
 }
 
 const FormFields = ({
@@ -175,6 +179,8 @@ const FormFields = ({
   onName,
   onPhone,
   onTreatment,
+  isLandingPage,
+  onCity,
 }: FormFieldsProps) => (
   <>
     <div className="mb-2">
@@ -183,8 +189,8 @@ const FormFields = ({
         onChange={onName}
         placeholder="Your name"
         className={`w-full px-3 py-2 rounded-xl border bg-background text-sm outline-none transition ${errors.name
-            ? "border-red-400 focus:border-red-400"
-            : "border-input focus:border-primary"
+          ? "border-red-400 focus:border-red-400"
+          : "border-input focus:border-primary"
           }`}
       />
 
@@ -199,25 +205,34 @@ const FormFields = ({
         maxLength={10}
         inputMode="numeric"
         className={`w-full px-3 py-2 rounded-xl border bg-background text-sm outline-none transition ${errors.phone
-            ? "border-red-400 focus:border-red-400"
-            : "border-input focus:border-primary"
+          ? "border-red-400 focus:border-red-400"
+          : "border-input focus:border-primary"
           }`}
       />
 
       <ErrMsg msg={errors.phone} />
     </div>
 
-    <select
-      value={form.treatment}
-      onChange={onTreatment}
-      aria-label="Select Treatment"
-      className="w-full px-3 py-2 rounded-xl border border-input bg-background text-sm mb-3 outline-none focus:border-primary transition"
-    >
-      <option value="">Select Treatment</option>
-      <option>IVF</option>
-      <option>IUI</option>
-      <option>Altruistic Surrogacy</option>
-    </select>
+    {!isLandingPage ? (
+      <select
+        value={form.treatment}
+        onChange={onTreatment}
+        aria-label="Select Treatment"
+        className="w-full px-3 py-2 rounded-xl border border-input bg-background text-sm mb-3 outline-none focus:border-primary transition"
+      >
+        <option value="">Select Treatment</option>
+        <option>IVF</option>
+        <option>IUI</option>
+        <option>Altruistic Surrogacy</option>
+      </select>
+    ) : (
+      <input
+        value={form.city}
+        onChange={onCity}
+        placeholder="Enter Your City"
+        className="w-full px-3 py-2 rounded-xl border border-input bg-background text-sm mb-3 outline-none focus:border-primary transition"
+      />
+    )}
 
     <Button
       variant="cta"
@@ -246,7 +261,23 @@ const HeroForm = ({
 
   const [loading, setLoading] =
     useState(false);
+  const pathname = window.location.pathname
+    .toLowerCase()
+    .replace(/^\/|\/$/g, "");
 
+  const isLandingPage =
+    pathname.includes("lp") || pathname.includes("fb/lp");
+
+  let phoneNumber = "971 174 8080";
+  let sourceName = "HeroForm";
+
+  if (pathname.includes("fb/lp")) {
+    phoneNumber = "971 167 5252";
+    sourceName = "Webform-Facebook-Ads";
+  } else if (pathname.includes("lp")) {
+    phoneNumber = "971 167 8282";
+    sourceName = "Webform-Google-Ads";
+  }
   const handleNameChange = (
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -296,7 +327,14 @@ const HeroForm = ({
       treatment: "",
     }));
   };
-
+  const handleCityChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setForm((prev) => ({
+      ...prev,
+      city: e.target.value,
+    }));
+  };
   const validate = (): HeroFormErrors => {
     const newErrors: HeroFormErrors = {};
 
@@ -351,8 +389,16 @@ const HeroForm = ({
 
       formData.append("name", payload.name);
       formData.append("mobile", payload.phone);
-      formData.append("source_name", "HeroForm");
-      formData.append("city_name", "Delhi");
+      formData.append("source_name", sourceName);
+
+      if (isLandingPage) {
+        formData.append(
+          "city_name",
+          form.city || "India"
+        );
+      } else {
+        formData.append("city_name", "Delhi");
+      }
 
       if (payload.treatment) {
         formData.append("treatment", payload.treatment);
@@ -399,10 +445,10 @@ const HeroForm = ({
         </p>
 
         <a
-          href="tel:+91971 174 8080"
+          href={`tel:+91${phoneNumber}`}
           className="block w-full bg-primary text-white py-2 rounded-xl text-sm font-medium hover:opacity-90 transition"
         >
-          Call Now: 971 174 8080
+          Call Now: {phoneNumber}
         </a>
       </div>
     );
@@ -421,6 +467,8 @@ const HeroForm = ({
         onName={handleNameChange}
         onPhone={handlePhoneChange}
         onTreatment={handleTreatmentChange}
+        onCity={handleCityChange}
+        isLandingPage={isLandingPage}
       />
     </form>
   );

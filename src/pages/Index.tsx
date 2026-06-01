@@ -13,6 +13,7 @@ import LeadPopup from "@/components/LeadPopup";
 import Benefits from "@/components/Benefits";
 import WhyChoose from "@/components/whyus";
 import SuccessStories from "@/components/success-stories";
+import CentreCard from "@/components/centre-card";
 
 const Index = () => (
   <main className="min-h-screen bg-background">
@@ -134,7 +135,7 @@ const Index = () => (
     <Doctors />
 
     <Treatments />
-
+    <CentreCard />
     <Reviews />
 
     <SuccessStories />

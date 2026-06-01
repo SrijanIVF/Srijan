@@ -146,30 +146,6 @@ const treatments = [
         desc: "A comprehensive test to evaluate sperm count, motility, and morphology, essential for diagnosing male infertility.",
     },
 ];
-
-const bookingSteps = [
-    {
-        num: "1",
-        title: "Call or WhatsApp Us",
-        desc: "Reach our Delhi fertility helpline at +91 971 174 8080 or send a WhatsApp enquiry anytime.",
-    },
-    {
-        num: "2",
-        title: "Share Your Details",
-        desc: "Provide brief information about your fertility concern so our patient care team can guide you to the right specialist.",
-    },
-    {
-        num: "3",
-        title: "Choose a Convenient Slot",
-        desc: "Pick a date and time that suits your schedule to meet our IVF specialist at our Delhi fertility centre.",
-    },
-    {
-        num: "4",
-        title: "Begin Your Journey",
-        desc: "Visit Srijan IVF Delhi and start your personalised parenthood journey with our caring and experienced team.",
-    },
-];
-
 const faqs = [
     {
         q: "What is the success rate of IVF at Srijan IVF Delhi?",

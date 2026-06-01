@@ -86,7 +86,7 @@ const Footer = () => {
 
                     <div className="border-t border-white/20 mt-14 pt-6 text-center">
                         <p className="text-sm text-white/80">
-                            © 2021 - 2026 Srijan IVF. All Rights Reserved.
+                            © 2026 Srijan IVF. All Rights Reserved.
                         </p>
                     </div>
                 </div>
