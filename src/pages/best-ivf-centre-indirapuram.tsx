@@ -378,10 +378,10 @@ const BestIVFCentreIndirapuram = () => {
                         "Best IVF Centre in Indirapuram | Srijan IVF",
 
                     url:
-                        "https://www.srijanivfcentre.com/best-ivf-centre-indirapuram",
+                        "https://srijanivfcentre.com/best-ivf-centre-indirapuram",
 
                     canonical_url:
-                        "https://www.srijanivfcentre.com/best-ivf-centre-indirapuram",
+                        "https://srijanivfcentre.com/best-ivf-centre-indirapuram",
 
                     og_type: "website",
 

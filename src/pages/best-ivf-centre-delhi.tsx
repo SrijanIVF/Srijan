@@ -349,10 +349,10 @@ const BestIVFCentreDelhi = () => {
                         "Best IVF Centre in Delhi NCR | Srijan IVF",
 
                     url:
-                        "https://www.srijanivfcentre.com/best-ivf-centre-delhi",
+                        "https://srijanivfcentre.com/best-ivf-centre-delhi",
 
                     canonical_url:
-                        "https://www.srijanivfcentre.com/best-ivf-centre-delhi",
+                        "https://srijanivfcentre.com/best-ivf-centre-delhi",
 
                     og_type: "website",
 

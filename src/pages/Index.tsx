@@ -34,8 +34,8 @@ const Index = () => (
         title:
           "Srijan IVF: Best IVF Centre in India, Top Fertility Treatment Clinic",
 
-        url: "https://www.srijanivfcentre.com/",
-        canonical_url: "https://www.srijanivfcentre.com/",
+        url: "https://srijanivfcentre.com/",
+        canonical_url: "https://srijanivfcentre.com/",
 
         og_type: "website",
 
@@ -45,10 +45,10 @@ const Index = () => (
         og_description:
           "Best IVF Clinic in India: Srijan IVF Centres is one of the Most Trusted Fertility Chain with the best Fertility Doctors in India, Which are equipped with latest and modern technology. Book your free appointment now.",
 
-        og_url: "https://www.srijanivfcentre.com/",
+        og_url: "https://srijanivfcentre.com/",
 
         og_image:
-          "https://www.srijanivfcentre.com/assets/hero-couple-CogizvDF.jpg",
+          "https://srijanivfcentre.com/assets/hero-couple-CogizvDF.jpg",
 
         twitter_card: "summary",
 
@@ -61,7 +61,7 @@ const Index = () => (
         twitter_site: "@srijan_ivf",
 
         twitter_image:
-          "https://www.srijanivfcentre.com/assets/hero-couple-CogizvDF.jpg",
+          "https://srijanivfcentre.com/assets/hero-couple-CogizvDF.jpg",
 
         twitter_image_alt: "IVF Centre in India",
 
@@ -76,10 +76,10 @@ const Index = () => (
           "@type": "LocalBusiness",
           name: "Srijan IVF",
           image:
-            "https://www.srijanivfcentre.com/assets/srijanivf_logoNew-B96NTA5h.webp",
+            "https://srijanivfcentre.com/assets/srijanivf_logoNew-B96NTA5h.webp",
           priceRange: "$$$",
           telephone: "+919711748080",
-          url: "https://www.srijanivfcentre.com/",
+          url: "https://srijanivfcentre.com/",
 
           address: {
             "@type": "PostalAddress",

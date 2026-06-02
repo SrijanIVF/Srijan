@@ -60,10 +60,10 @@ const DrPallaviPage = () => {
             "Dr. Pallavi Singh | IVF Specialist at Srijan IVF Centre",
 
           url:
-            "https://www.srijanivfcentre.com/doctor/pallavi-singh",
+            "https://srijanivfcentre.com/doctor/pallavi-singh",
 
           canonical_url:
-            "https://www.srijanivfcentre.com/doctor/pallavi-singh",
+            "https://srijanivfcentre.com/doctor/pallavi-singh",
 
           og_type: "profile",
 
