@@ -111,15 +111,10 @@ const Footer = () => {
                   <span>»</span> Privacy Policy
                 </Link>
               </li>
-              {/* <li>
+              <li>
                 <Link to="/termsandconditions" className="hover:text-white transition flex items-center gap-2">
                   <span>»</span> Terms & Conditions
                 </Link>
-              </li> */}
-              <li>
-                <span className="flex items-center gap-2">
-                  <span>»</span> Terms & Conditions
-                </span>
               </li>
             </ul>
           </div>

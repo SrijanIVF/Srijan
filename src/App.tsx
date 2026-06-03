@@ -43,6 +43,7 @@ import BestIvfCentreDelhi from "./pages/best-ivf-centre-delhi.tsx";
 import BestIvfCentreIndirapuram from "./pages/best-ivf-centre-indirapuram.tsx";
 import Indexlp from "./pages/lp/Index.tsx";
 import Indexfb from "./pages/fb/lp/Index.tsx";
+import TermsAndConditions from "./pages/termsandconditions.tsx";
 
 const queryClient = new QueryClient();
 
@@ -93,6 +94,7 @@ const App = () => (
           <Route path="/best-ivf-centre-indirapuram" element={<BestIvfCentreIndirapuram />} />
           <Route path="/lp/best-ivf-centre-india" element={<Indexlp />} />
           <Route path="/fb/lp/best-ivf-centre-india" element={<Indexfb />} />
+          <Route path="/termsandconditions" element={<TermsAndConditions />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
