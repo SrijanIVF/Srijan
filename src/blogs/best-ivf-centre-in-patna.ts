@@ -160,7 +160,7 @@ Srijan IVF Centre, Main Khichripur Road, Delhi 110091.
 
 Phone No.: +91-971 174 8080
 
-Facebook👉 https://www.facebook.com/srijanivfcentre
+Facebook👉 https://www.facebook.com/srijanfertility/
 
 
 Instagram👉 https://www.instagram.com/srijan.ivfcentre/

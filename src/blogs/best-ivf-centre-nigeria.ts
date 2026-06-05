@@ -147,7 +147,7 @@ Don’t let distance or cost become a hurdle — take the first step towards a j
 
 📍 **Location:** Delhi, India
 
-Facebook👉 https://www.facebook.com/srijanivfcentre
+Facebook👉 https://www.facebook.com/srijanfertility/
 
 
 Instagram👉 https://www.instagram.com/srijan.ivfcentre/

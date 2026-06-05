@@ -146,7 +146,7 @@ Reach out today for a free consultation and take the first step towards building
 
 📍 Location: Delhi, India
 
-Facebook👉 https://www.facebook.com/srijanivfcentre
+Facebook👉 https://www.facebook.com/srijanfertility/
 
 
 Instagram👉 https://www.instagram.com/srijan.ivfcentre/

@@ -399,7 +399,7 @@ const Navbar = () => {
             </Link>
 
             <Link
-              to="/Blogspage"
+              to="/blogs"
               onClick={() => setOpen(false)}
               className="block py-3"
             >

@@ -74,7 +74,7 @@ const BlogsPage = () => {
                 </p>
 
                 <Link
-                  to={`/blog/${blog.id}`}
+                  to={`/blogs/${blog.id}`}
                   className="inline-block bg-pink-600 text-white text-sm font-semibold px-5 py-2.5 rounded-xl hover:bg-pink-700 transition-colors duration-200"
                 >
                   Read More

@@ -44,6 +44,7 @@ import BestIvfCentreIndirapuram from "./pages/best-ivf-centre-indirapuram.tsx";
 import Indexlp from "./pages/lp/Index.tsx";
 import Indexfb from "./pages/fb/lp/Index.tsx";
 import TermsAndConditions from "./pages/termsandconditions.tsx";
+import ScrollToTop from "./components/ScrolltoTop.tsx";
 
 const queryClient = new QueryClient();
 
@@ -53,6 +54,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+      <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/thank-you" element={<ThankYou />} />
@@ -65,7 +67,7 @@ const App = () => (
           <Route path="/contact-us" element={<Contact/>} />
           <Route path="/appointment" element={<Appointment />} />
           <Route path="/blogs" element={<BlogsPage />} />
-          <Route path="/blog/:slug" element={<BlogDetailPage />} />
+          <Route path="/blogs/:slug" element={<BlogDetailPage />} />
           <Route path="/success-stories-testimonials" element={<SuccessStoriesPage />} />
           <Route path="/ivf-treatment" element={<IVF />} />
           <Route path="/iui-treatment" element={<IUI />} />

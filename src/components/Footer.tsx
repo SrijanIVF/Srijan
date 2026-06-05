@@ -25,7 +25,7 @@ const Footer = () => {
             <div className="mt-5 flex gap-3">
 
               <a
-                href="https://www.facebook.com/srijanivfcentre/"
+                href="https://www.facebook.com/srijanfertility/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-10 w-10 rounded-full bg-white/20 hover:bg-white hover:text-[#e1658a] grid place-items-center transition"

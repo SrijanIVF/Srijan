@@ -143,7 +143,7 @@ Heiwel Hospital, National Highway 56, Airport Road, near Sant Atulanand, Gilat B
 
 Phone No.: +91-971 174 8080
 
-Facebook👉 https://www.facebook.com/srijanivfcentre
+Facebook👉 https://www.facebook.com/srijanfertility/
 
 
 Instagram👉 https://www.instagram.com/srijan.ivfcentre/
