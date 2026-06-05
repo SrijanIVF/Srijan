@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 
 import doc1 from "@/assets/Dr pallavi srijanivf.png";
-import doc2 from "@/assets/Dr.-santosh.webp";
+import doc2 from "@/assets/santosh.png";
 
 const doctors = [
   {

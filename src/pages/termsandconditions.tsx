@@ -13,7 +13,7 @@ const PrivacyPolicy = () => {
       {/* <section className="relative w-full h-[60vh] flex items-center justify-center text-center">
         <img
           src={aboutImg}
-          alt="Privacy Policy"
+          alt="Terms & Conditions"
           className="absolute inset-0 w-full h-full object-cover brightness-40"
         />
 
@@ -21,7 +21,7 @@ const PrivacyPolicy = () => {
 
         <div className="relative z-10 text-white px-4 max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-5">
-            Privacy Policy
+            Terms & Conditions
           </h1>
         </div>
       </section> */}
@@ -30,7 +30,7 @@ const PrivacyPolicy = () => {
         <div className="max-w-6xl mx-auto">
 
           <p className="text-xs font-semibold tracking-widest uppercase text-pink-400 mb-3">
-            Privacy Policy
+            Terms & Conditions
           </p>
 
           <h2 className="text-3xl md:text-4xl font-bold text-pink-400 mb-2">
@@ -40,7 +40,7 @@ const PrivacyPolicy = () => {
           <div className="w-14 h-0.5 bg-pink-500 rounded-full mb-5" />
 
           <p className="text-gray-600 text-sm leading-relaxed mb-5">
-            This Privacy Policy describes how Srijan Fertility IVF Clinic
+            This Terms & Conditions describes how Srijan Fertility IVF Clinic
             Private Limits (“we”, “us”, or “our”) collects, uses, and
             discloses your personal information when you use our services.
             It also explains your choices regarding your personal information.
@@ -105,7 +105,7 @@ const PrivacyPolicy = () => {
             our Services. Some of this information may be classified as
             personal information, and we will only collect, process, use,
             transfer, or disclose it for the purposes outlined in this
-            Privacy Policy.
+            Terms & Conditions.
           </p>
 
         </div>
@@ -281,7 +281,7 @@ const PrivacyPolicy = () => {
             <div className="w-14 h-0.5 bg-pink-500 rounded-full mb-5" />
 
             <p className="text-gray-600 text-sm leading-relaxed">
-              If you have questions regarding this Privacy Policy,
+              If you have questions regarding this Terms & Conditions,
               please contact us at{" "}
               <span className="text-pink-600 font-semibold">
                 srijanivf2022@gmail.com
@@ -310,7 +310,7 @@ const PrivacyPolicy = () => {
 
             <ul className="list-disc pl-5 space-y-3">
               <li className="text-gray-500 text-sm leading-relaxed">
-                This Privacy Policy should be read with the General Consent Form.
+                This Terms & Conditions should be read with the General Consent Form.
               </li>
 
               <li className="text-gray-500 text-sm leading-relaxed">

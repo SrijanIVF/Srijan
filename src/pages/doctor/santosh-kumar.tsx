@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 //import Callus from "@/components/callbtn";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import bannerImg from "@/assets/docimg.png";
-import doctorImg from "@/assets/Dr.-santosh.webp";
+import doctorImg from "@/assets/santosh.png";
 import radiologistImg from "@/assets/Radiologist.webp";
 import pregnancyImg from "@/assets/Pregnancy.webp";
 import gynecologyImg from "@/assets/Gynecology-2.webp";

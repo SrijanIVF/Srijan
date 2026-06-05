@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { useState } from "react";
 import doc1 from "@/assets/Dr pallavi srijanivf.png";
-import doc2 from "@/assets/Dr.-santosh.webp";
+import doc2 from "@/assets/santosh.png";
 import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import LeadPopup from "@/components/LeadPopup";
