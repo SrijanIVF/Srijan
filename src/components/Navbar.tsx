@@ -15,7 +15,7 @@ const links = [
   { href: "/doctors", label: "Doctors" },
   { href: "/centre", label: "Centre" },
   { href: "/testimonials", label: "Testimonials" },
-  { href: "/Blogs", label: "Blog" },
+  { href: "/blogs", label: "Blog" },
   { href: "/contact-us", label: "Contact Us" },
 ];
 
