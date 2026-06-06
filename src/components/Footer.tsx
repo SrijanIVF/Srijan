@@ -149,7 +149,7 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-white/80">
               <li className="flex gap-3">
                 <MapPin className="h-4 w-4 mt-0.5 text-white shrink-0" />
-                Plat No. 7, Abhay Khand 1, Pocket 2, Abhay Khand, Indirapuram, Ghaziabad, Uttar Pradesh 201020, Ghaziabad, Uttar Pradesh 201020.
+                Plat No. 7, Abhay Khand 1, Pocket 2, Abhay Khand, Indirapuram, Ghaziabad, Uttar Pradesh 201020.
               </li>
               <li className="flex gap-3">
                 <Phone className="h-4 w-4 mt-0.5 text-white shrink-0" />

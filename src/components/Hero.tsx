@@ -75,7 +75,7 @@ const Hero = () => {
             </div>
 
             <p className="mt-6 text-lg text-muted-foreground max-w-xl">
-              Compassionate, world-class fertility care backed by 20+ years of
+              Compassionate, world-class fertility care backed by 23+ years of
               experience and an industry-leading 90% success rate. Let us walk
               this journey with you.
             </p>

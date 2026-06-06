@@ -174,7 +174,7 @@ const bookingSteps = [
 const faqs = [
     {
         q: "Is Srijan IVF the best IVF centre in Indrapuram, Ghaziabad?",
-        a: "Srijan IVF is one of the most trusted and highly rated fertility centres in Indrapuram and Ghaziabad NCR. With 20+ years of expert doctors, NABL-certified embryology labs, and consistently high IVF success rates, we are the first choice for couples seeking fertility treatment in this region.",
+        a: "Srijan IVF is one of the most trusted and highly rated fertility centres in Indrapuram and Ghaziabad NCR. With 23+ years of expert doctors, NABL-certified embryology labs, and consistently high IVF success rates, we are the first choice for couples seeking fertility treatment in this region.",
     },
     {
         q: "What is the IVF success rate at Srijan IVF Indrapuram?",
