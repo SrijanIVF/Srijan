@@ -41,7 +41,7 @@ const BlogsPage = () => {
 
       <section className="py-12 md:py-20 px-4 md:px-6 bg-white">
         <div className="max-w-5xl mx-auto flex flex-col gap-10 md:gap-12">
-          {blogs.map((blog) => (
+          {blogs?.map((blog) => (
             <article
               key={blog.id}
               className="border border-gray-200 rounded-3xl overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col"

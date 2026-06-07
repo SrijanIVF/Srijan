@@ -366,7 +366,7 @@ const BlogDetailPage = () => {
       </section>
 
       
-      <WhatsAppButton />
+      {/* <WhatsAppButton /> */}
       <Footer />
     </>
   );
