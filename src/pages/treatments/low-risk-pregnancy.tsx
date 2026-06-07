@@ -357,7 +357,7 @@ const LowRiskPregnancy = () => {
       </section>
 
       
-      <WhatsAppButton />
+     
       <Footer />
     </>
   );

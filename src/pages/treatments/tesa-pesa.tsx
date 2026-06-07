@@ -399,7 +399,7 @@ const TesaPesaPage = () => {
             </section>
 
             
-            <WhatsAppButton />
+           
             <Footer />
         </>
     );

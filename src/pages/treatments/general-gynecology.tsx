@@ -336,7 +336,7 @@ const GeneralGynecology = () => {
       </section>
 
       
-      <WhatsAppButton />
+     
       <Footer />
     </>
   );

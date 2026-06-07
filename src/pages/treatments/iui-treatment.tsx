@@ -265,7 +265,7 @@ const IUIPage = () => {
             </section>
 
             
-            <WhatsAppButton />
+           
             <Footer />
         </>
     );

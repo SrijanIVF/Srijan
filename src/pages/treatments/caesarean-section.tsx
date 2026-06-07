@@ -442,7 +442,7 @@ const CaesareanSection = () => {
       </section>
 
       
-      <WhatsAppButton />
+     
       <Footer />
     </>
   );

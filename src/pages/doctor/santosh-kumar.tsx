@@ -352,7 +352,7 @@ const DrSantoshPage = () => {
           </div>
         </div>
       </section>
-      <WhatsAppButton />
+     
       <LeadPopup />
       {showLeadPopup && (
         <LeadPopup onClose={() => setShowLeadPopup(false)} />

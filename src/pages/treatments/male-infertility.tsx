@@ -371,7 +371,7 @@ const MaleInfertilityPage = () => {
       </section>
 
       
-      <WhatsAppButton />
+     
       <Footer />
     </>
   );

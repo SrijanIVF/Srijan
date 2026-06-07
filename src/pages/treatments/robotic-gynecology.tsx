@@ -346,7 +346,7 @@ const RoboticGynecology = () => {
       </section>
 
       
-      <WhatsAppButton />
+     
       <Footer />
     </>
   );

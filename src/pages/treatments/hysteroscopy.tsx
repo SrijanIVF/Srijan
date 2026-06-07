@@ -404,7 +404,7 @@ const HysteroscopyPage = () => {
             </section>
 
             
-            <WhatsAppButton />
+           
             <Footer />
         </>
     );

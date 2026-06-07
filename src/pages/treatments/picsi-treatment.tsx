@@ -352,7 +352,7 @@ const PICSI = () => {
             </section>
 
             
-            <WhatsAppButton />
+           
             <Footer />
         </>
     );

@@ -327,7 +327,7 @@ const LAHPage = () => {
             </section>
 
             
-            <WhatsAppButton />
+           
             <Footer />
         </>
     );

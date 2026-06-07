@@ -302,7 +302,7 @@ const Menopause = () => {
       </section>
 
       
-      <WhatsAppButton />
+     
       <Footer />
     </>
   );

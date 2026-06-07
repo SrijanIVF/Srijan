@@ -430,7 +430,7 @@ const ICSIPage = () => {
       </section>
 
       
-      <WhatsAppButton />
+     
       <Footer />
     </>
   );

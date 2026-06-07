@@ -359,7 +359,7 @@ const PCOS = () => {
       </section>
 
       
-      <WhatsAppButton />
+     
       <Footer />
     </>
   );

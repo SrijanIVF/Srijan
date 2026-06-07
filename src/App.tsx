@@ -45,6 +45,7 @@ import Indexlp from "./pages/lp/Index.tsx";
 import Indexfb from "./pages/fb/lp/Index.tsx";
 import TermsAndConditions from "./pages/termsandconditions.tsx";
 import ScrollToTop from "./components/ScrolltoTop.tsx";
+import  WhatsAppWidget from "./components/WhatsAppButton.tsx"
 
 const queryClient = new QueryClient();
 
@@ -53,6 +54,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <WhatsAppWidget />
       <BrowserRouter>
       <ScrollToTop />
         <Routes>

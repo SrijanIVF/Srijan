@@ -182,7 +182,7 @@ const OurCentrePage = () => {
           </div>
         </div>
       </section>
-      <WhatsAppButton />
+     
       <LeadPopup />
       <Footer />
     </>

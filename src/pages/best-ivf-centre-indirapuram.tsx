@@ -1094,7 +1094,7 @@ const BestIVFCentreIndirapuram = () => {
                 </div>
 
             </section>
-            <WhatsAppButton />
+           
             <LeadPopup />
             <Footer />
         </>

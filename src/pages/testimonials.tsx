@@ -34,7 +34,7 @@ const testimonialspage = () => {
       <Testimonials />
       <Reviews />
       <LeadPopup />
-      <WhatsAppButton />
+     
       <Footer />
     </>
   );

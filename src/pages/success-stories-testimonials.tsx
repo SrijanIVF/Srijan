@@ -135,7 +135,7 @@ const SuccessStoriesPage = () => {
         </div>
       </section>
       <LeadPopup />
-      <WhatsAppButton />
+     
       <Footer />
     </>
   );
