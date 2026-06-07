@@ -8,7 +8,7 @@ const locations = [
   },
   {
     title: "Indirapuram",
-    desc: "Plat No. 7, Abhay Khand 1, Pocket 2, Abhay Khand, Indirapuram, Ghaziabad, Uttar Pradesh 201020, Ghaziabad, Uttar Pradesh 201020.",
+    desc: "Plat No. 7, Abhay Khand 1, Pocket 2, Abhay Khand, Indirapuram, Ghaziabad, Uttar Pradesh 201020.",
   },
   {
     title: "Varanasi",

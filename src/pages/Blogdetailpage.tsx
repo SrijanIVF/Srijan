@@ -61,7 +61,7 @@ const BlogDetailPage = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/65" />
         <div className="relative z-10 w-full max-w-4xl mx-auto px-4 pb-8 md:pb-10">
           <Link
-            to="/Blogspage"
+            to="/blogs"
             className="inline-flex items-center gap-2 text-pink-300 text-xs font-semibold tracking-widest uppercase mb-4 hover:text-pink-200 transition-colors"
           >
             ← Back to Blogs

@@ -123,12 +123,8 @@ const Index = () => (
 
     <Hero />
 
-    <About
-      heading="Srijan IVF Centre: Your Trusted Partner for Fertility Treatment in Delhi NCR"
-      description={`For couples who are dreaming of parenthood, Srijan IVF offers personalized and advanced fertility care designed to support every step of your IVF journey. We are recognized for trusted and personalized fertility treatment in Delhi. Our experienced specialists provide advanced procedures including IVF, IUI, ICSI, Laparoscopy, Hysteroscopy, TESA/PESA, and other customized fertility solutions tailored to your unique medical needs.
-
-      At Srijan IVF, we combine medical excellence with emotional support to help you move closer to the joy of starting or growing your family.`}
-    />    <Benefits />
+    <About />    
+    <Benefits />
 
     <WhyChoose />
 

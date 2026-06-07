@@ -46,7 +46,7 @@ const WhyChoose = () => {
             </h2>
 
             <p className="mt-6 text-gray-600 leading-relaxed">
-              Srijan IVF is renowned as the <span className="font-semibold">best IVF centre in Delhi NCR</span>.
+              Srijan IVF is renowned as the <span className="font-semibold">best IVF centre in India</span>.
             </p>
 
             {showMore && (
