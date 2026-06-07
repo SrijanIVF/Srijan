@@ -3,7 +3,7 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 //import Callus from "@/components/callbtn";
-import WhatsAppButton from "@/components/WhatsAppButton";
+// import WhatsAppButton from "@/components/WhatsAppButton";
 import { blogs } from "@/blogs";
 import { renderContent } from "@/lib/rendercontent";
 import bannerImg from "@/assets/About-us-banner.jpg";
@@ -366,7 +366,7 @@ const BlogDetailPage = () => {
       </section>
 
       
-      <WhatsAppButton />
+      
       <Footer />
     </>
   );

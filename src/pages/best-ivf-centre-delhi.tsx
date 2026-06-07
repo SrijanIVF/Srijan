@@ -1068,7 +1068,7 @@ const BestIVFCentreDelhi = () => {
                 </div>
 
             </section>
-            <WhatsAppButton />
+           
             <LeadPopup />
             <Footer />
         </>

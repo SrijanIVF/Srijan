@@ -304,7 +304,7 @@ const DrPallaviPage = () => {
         </div>
       </section>
       <Reviews />
-      <WhatsAppButton />
+     
       <Leadpopup />
       {showLeadPopup && (
         <Leadpopup onClose={() => setShowLeadPopup(false)} />

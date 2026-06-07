@@ -99,8 +99,7 @@ const BlogsPage = () => {
 
         </div>
       </section>
-
-      <WhatsAppButton />
+     
       <LeadPopup />
       <Footer />
     </>

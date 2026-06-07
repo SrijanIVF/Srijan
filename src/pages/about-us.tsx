@@ -229,7 +229,7 @@ const AboutPage = () => {
       </section>
       <Whyus />
       <Reviews />
-      <WhatsAppButton />
+     
       <LeadPopup />
       <Footer />
 

@@ -389,7 +389,7 @@ const BlastocystCulture = () => {
       </section>
 
       
-      <WhatsAppButton />
+     
       <Footer />
     </>
   );

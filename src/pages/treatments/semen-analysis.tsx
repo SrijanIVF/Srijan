@@ -426,7 +426,7 @@ const SemenAnalysis = () => {
             </section>
 
             
-            <WhatsAppButton />
+           
             <Footer />
         </>
     );

@@ -358,7 +358,7 @@ const LaparoscopicGynecology = () => {
       </section>
 
       
-      <WhatsAppButton />
+     
       <Footer />
     </>
   );

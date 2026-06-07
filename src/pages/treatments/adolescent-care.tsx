@@ -340,7 +340,7 @@ const AdolescentCare = () => {
             </section>
 
             
-            <WhatsAppButton />
+           
             <Footer />
         </>
     );

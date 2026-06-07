@@ -142,7 +142,7 @@ const Index = () => (
 
     <Footer />
 
-    <WhatsAppButton />
+   
 
     <LeadPopup />
   </main>

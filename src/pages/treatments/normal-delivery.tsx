@@ -379,7 +379,7 @@ const NormalDelivery = () => {
             </section>
 
             
-            <WhatsAppButton />
+           
             <Footer />
         </>
     );

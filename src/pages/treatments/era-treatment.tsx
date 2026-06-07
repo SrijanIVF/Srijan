@@ -359,7 +359,7 @@ const ERA = () => {
             </section>
 
             
-            <WhatsAppButton />
+           
             <Footer />
         </>
     );

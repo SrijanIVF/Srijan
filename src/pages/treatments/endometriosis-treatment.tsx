@@ -340,7 +340,7 @@ const Endometriosis = () => {
       </section>
 
       
-      <WhatsAppButton />
+     
       <Footer />
     </>
   );

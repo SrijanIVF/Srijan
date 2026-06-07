@@ -245,7 +245,7 @@ const IVFTreatmentPage = () => {
       </section>
 
       
-      <WhatsAppButton />
+     
       <Footer />
     </>
   );

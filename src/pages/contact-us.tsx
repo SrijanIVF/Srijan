@@ -175,7 +175,7 @@ const ContactPage = () => {
         <LeadPopup onClose={() => setShowPopup(false)} />
       )}
       <LeadPopup />
-      <WhatsAppButton />
+     
       <Footer />
     </>
   );
