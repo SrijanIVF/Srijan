@@ -1,28 +1,11 @@
-import { useEffect, useState } from "react";
-import {
-  Menu,
-  X,
-  Phone,
-  ChevronRight,
-  ChevronDown,
-} from "lucide-react";
+import { useEffect, useState, useRef } from "react";
+import { Menu, X, Phone, ChevronDown, ChevronRight, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/srijanivf_logoNew.webp";
-
-const links = [
-  { href: "/", label: "Home" },
-  { href: "#", label: "Treatments" },
-  { href: "/doctors", label: "Doctors" },
-  { href: "/centre", label: "Centre" },
-  { href: "/testimonials", label: "Testimonials" },
-  { href: "/blogs", label: "Blog" },
-  { href: "/contact-us", label: "Contact Us" },
-];
 
 const treatmentCategories = [
   {
     title: "IVF & Infertility",
-    slug: "#",
     items: [
       { name: "IVF", slug: "ivf-treatment" },
       { name: "IUI", slug: "iui-treatment" },
@@ -39,12 +22,8 @@ const treatmentCategories = [
   },
   {
     title: "Gynecology",
-    slug: "#",
     items: [
-      {
-        name: "Laparoscopic Gynecology",
-        slug: "laparoscopic-gynecology",
-      },
+      { name: "Laparoscopic Gynecology", slug: "laparoscopic-gynecology" },
       { name: "General Gynecology", slug: "general-gynecology" },
       { name: "Robotic Gynecology", slug: "robotic-gynecology" },
       { name: "Adolescent Care", slug: "adolescent-care" },
@@ -55,7 +34,6 @@ const treatmentCategories = [
   },
   {
     title: "Obstetrics",
-    slug: "#",
     items: [
       { name: "Caesarean Section", slug: "caesarean-section" },
       { name: "High-Risk Pregnancy", slug: "high-risk-pregnancy" },
@@ -65,243 +43,330 @@ const treatmentCategories = [
   },
 ];
 
+const doctors = [
+  { name: "Dr. Pallavi Singh", slug: "pallavi-singh", title: "IVF Specialist" },
+  { name: "Dr. Santosh Kumar Arjun", slug: "santosh-kumar", title: "Reproductive Medicine" },
+];
+
+const centres = [
+  { name: "Delhi", slug: "best-ivf-centre-delhi" },
+  { name: "Indirapuram", slug: "best-ivf-centre-indirapuram" },
+];
+
+const TreatmentsDropdown = () => {
+  const [activeCategory, setActiveCategory] = useState(treatmentCategories[0].title);
+
+  return (
+    <div
+      className="
+        absolute left-1/2 -translate-x-1/2 top-full mt-4
+        w-[680px] bg-white rounded-2xl shadow-2xl border border-[#F8BBD9]
+        opacity-0 invisible group-hover:opacity-100 group-hover:visible
+        transition-all duration-200 overflow-hidden z-50
+      "
+    >
+      <div className="bg-[#FDF2F6] px-6 py-3 border-b border-[#F8BBD9]">
+        <p className="text-xs font-semibold tracking-widest text-[#C2185B] uppercase">
+          Our Specialisations
+        </p>
+      </div>
+
+      <div className="flex">
+        <div className="w-52 border-r border-[#F8BBD9] py-3">
+          {treatmentCategories.map((cat) => (
+            <button
+              key={cat.title}
+              onMouseEnter={() => setActiveCategory(cat.title)}
+              className={`
+                w-full text-left px-5 py-3 text-sm font-medium flex items-center justify-between
+                transition-colors duration-150
+                ${activeCategory === cat.title
+                  ? "bg-[#FDF2F6] text-[#C2185B]"
+                  : "text-[#4A1942] hover:bg-[#FDF2F6] hover:text-[#C2185B]"
+                }
+              `}
+            >
+              {cat.title}
+              <ChevronRight className="h-3.5 w-3.5 opacity-50" />
+            </button>
+          ))}
+        </div>
+
+        <div className="flex-1 p-5">
+          <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+            {treatmentCategories
+              .find((c) => c.title === activeCategory)
+              ?.items.map((item) => (
+                <Link
+                  key={item.slug}
+                  to={`/${item.slug}`}
+                  className="
+                    px-3 py-2.5 text-sm text-gray-600 rounded-lg
+                    hover:bg-[#FDF2F6] hover:text-[#C2185B]
+                    transition-colors duration-150 flex items-center gap-2 group/item
+                  "
+                >
+                  <span
+                    className="
+                      h-1.5 w-1.5 rounded-full bg-[#F8BBD9]
+                      group-hover/item:bg-[#C2185B] transition-colors flex-shrink-0
+                    "
+                  />
+                  {item.name}
+                </Link>
+              ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const SmallDropdown = ({
+  items,
+}: {
+  items: { label: string; href: string; sub?: string }[];
+}) => (
+  <div
+    className="
+      absolute left-1/2 -translate-x-1/2 top-full mt-4
+      w-60 bg-white rounded-2xl shadow-2xl border border-[#F8BBD9]
+      opacity-0 invisible group-hover:opacity-100 group-hover:visible
+      transition-all duration-200 overflow-hidden z-50
+    "
+  >
+    {items.map((item, i) => (
+      <Link
+        key={item.href}
+        to={item.href}
+        className={`
+          flex flex-col px-5 py-3.5 text-sm
+          hover:bg-[#FDF2F6] hover:text-[#C2185B] transition-colors
+          ${i > 0 ? "border-t border-[#F8BBD9]" : ""}
+        `}
+      >
+        <span className="font-medium text-[#4A1942]">{item.label}</span>
+        {item.sub && (
+          <span className="text-xs text-gray-400 mt-0.5">{item.sub}</span>
+        )}
+      </Link>
+    ))}
+  </div>
+);
+
+const MobileAccordion = ({
+  label,
+  children,
+  isOpen,
+  onToggle,
+}: {
+  label: string;
+  children: React.ReactNode;
+  isOpen: boolean;
+  onToggle: () => void;
+}) => {
+  return (
+    <div className="border-b border-[#F8BBD9]">
+      <button
+        onClick={onToggle}
+        className="w-full flex items-center justify-between py-4 text-sm font-semibold text-[#4A1942]"
+      >
+        {label}
+        <ChevronDown
+          className={`h-4 w-4 text-[#C2185B] transition-transform duration-200 ${isOpen ? "rotate-180" : ""
+            }`}
+        />
+      </button>
+      {isOpen && <div className="pb-3">{children}</div>}
+    </div>
+  );
+};
+
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
-
-  const [showTreatments, setShowTreatments] =
-    useState(false);
-
-  const [openCategory, setOpenCategory] = useState<
-    string | null
-  >(null);
-
-  const [showDoctors, setShowDoctors] = useState(false);
-
-  const [showCentres, setShowCentres] = useState(false);
-
+  const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
+  const [mobileTreatmentCat, setMobileTreatmentCat] = useState<string | null>(null);
+  const [openAccordion, setOpenAccordion] = useState<string | null>(null);
   useEffect(() => {
-    const onScroll = () =>
-      setScrolled(window.scrollY > 20);
-
+    const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
-
-    return () =>
-      window.removeEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled
-        ? "bg-white/90 backdrop-blur-lg shadow-md"
-        : "bg-transparent"
-        }`}
-    >
-      <nav className="container mx-auto flex items-center justify-between py-3 px-4">
-        <Link to="/" className="flex items-center">
-          <img
-            src={logo}
-            alt="Srijan IVF"
-            className="h-9 sm:h-11 w-auto object-contain"
-          />
-        </Link>
+    <>
+      <div className="fixed top-0 inset-x-0 h-0.5 bg-gradient-to-r from-[#F8BBD9] via-[#C2185B] to-[#F8BBD9] z-50" />
 
-        <div className="flex items-center gap-3 lg:hidden">
-          <a
-            href="tel:+91971 174 8080"
-            className="flex items-center gap-1.5 bg-pink-50 border border-pink-100 px-3 py-2 rounded-full"
-          >
-            <Phone className="h-4 w-4 text-pink-600" />
+      <header
+        className={`
+          fixed top-0.5 inset-x-0 z-40 transition-all duration-300
+          ${scrolled
+            ? "bg-white/95 backdrop-blur-xl shadow-[0_4px_24px_rgba(194,24,91,0.08)]"
+            : "bg-white/80 backdrop-blur-md"
+          }
+        `}
+      >
+        <nav className="max-w-7xl mx-auto flex items-center justify-between h-16 px-5 lg:px-8">
 
-            <span className="text-sm font-semibold text-pink-600 leading-none">
-              971 174 8080
-            </span>
-          </a>
+          <Link to="/" className="flex-shrink-0">
+            <img
+              src={logo}
+              alt="Srijan IVF"
+              className="h-10 w-auto object-contain"
+            />
+          </Link>
 
-          <button
-            className="h-11 w-11 flex items-center justify-center rounded-xl border border-gray-200 bg-white shadow-sm"
-            onClick={() => setOpen(!open)}
-          >
-            {open ? (
-              <X className="h-5 w-5 text-gray-700" />
-            ) : (
-              <Menu className="h-5 w-5 text-gray-700" />
-            )}
-          </button>
-        </div>
+          <ul className="hidden lg:flex items-center gap-1">
+            {/* <li>
+              <Link
+                to="/"
+                className="px-4 py-2 text-sm font-medium text-[#4A1942] hover:text-[#C2185B] rounded-lg hover:bg-[#FDF2F6] transition-all"
+              >
+                Home
+              </Link>
+            </li> */}
 
-        <ul className="hidden lg:flex items-center gap-8">
-          {links.map((l) => (
-            <li key={l.label} className="relative group">
-              {l.label === "Treatments" ? (
-                <>
-                  <span className="text-sm font-medium text-gray-700 hover:text-pink-600 cursor-pointer transition-colors">
-                    Treatments
-                  </span>
+            <li className="relative group">
+              <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-[#4A1942] hover:text-[#C2185B] rounded-lg hover:bg-[#FDF2F6] transition-all">
+                Our Services
+                <ChevronDown className="h-3.5 w-3.5 opacity-60 group-hover:rotate-180 transition-transform duration-200" />
+              </button>
+              <TreatmentsDropdown />
+            </li>
 
-                  <div className="absolute left-0 top-full mt-3 w-[320px] bg-white border border-pink-100 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                    {treatmentCategories.map((category) => (
-                      <div
-                        key={category.title}
-                        className="relative group/submenu"
-                      >
-                        <div className="flex items-center justify-between px-5 py-4 text-sm font-semibold text-gray-700 hover:bg-pink-50 hover:text-pink-600 transition-all cursor-default">
-                          {category.title}
+            <li className="relative group">
+              <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-[#4A1942] hover:text-[#C2185B] rounded-lg hover:bg-[#FDF2F6] transition-all">
+                Our Doctors
+                <ChevronDown className="h-3.5 w-3.5 opacity-60 group-hover:rotate-180 transition-transform duration-200" />
+              </button>
+              <SmallDropdown
+                items={doctors.map((d) => ({
+                  label: d.name,
+                  href: `/doctor/${d.slug}`,
+                  sub: d.title,
+                }))}
+              />
+            </li>
 
-                          <ChevronRight className="h-4 w-4" />
-                        </div>
+            <li className="relative group">
+              <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-[#4A1942] hover:text-[#C2185B] rounded-lg hover:bg-[#FDF2F6] transition-all">
+                Our Centres
+                <ChevronDown className="h-3.5 w-3.5 opacity-60 group-hover:rotate-180 transition-transform duration-200" />
+              </button>
+              <SmallDropdown
+                items={centres.map((c) => ({
+                  label: c.name,
+                  href: `/${c.slug}`,
+                }))}
+              />
+            </li>
 
-                        <div className="absolute left-full top-0 w-[280px] bg-white border border-pink-100 rounded-2xl shadow-2xl opacity-0 invisible group-hover/submenu:opacity-100 group-hover/submenu:visible transition-all duration-300 overflow-hidden">
-                          {category.items.map((item) => (
-                            <Link
-                              key={item.slug}
-                              to={`/${item.slug}`}
-                              className="block px-5 py-3 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 transition-all"
-                            >
-                              {item.name}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </>
-              ) : l.label === "Doctors" ? (
-                <>
-                  <span className="text-sm font-medium text-gray-700 hover:text-pink-600 cursor-pointer transition-colors">
-                    Doctors
-                  </span>
-
-                  <div className="absolute left-0 top-full mt-3 w-64 bg-white border border-pink-100 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden">
-                    <Link
-                      to="/doctor/pallavi-singh"
-                      className="block px-5 py-4 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600"
-                    >
-                      Dr. Pallavi Singh
-                    </Link>
-
-                    <Link
-                      to="/doctor/santosh-kumar"
-                      className="block px-5 py-4 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600"
-                    >
-                      Dr. Santosh Kumar Arjun
-                    </Link>
-                  </div>
-                </>
-              ) : l.label === "Centre" ? (
-                <>
-                  <Link
-                    to="/centre"
-                    className="text-sm font-medium text-gray-700 hover:text-pink-600 transition-colors"
-                  >
-                    Centre
-                  </Link>
-
-                  <div className="absolute left-0 top-full mt-3 w-64 bg-white border border-pink-100 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden">
-                    <Link
-                      to="/best-ivf-centre-delhi"
-                      className="block px-5 py-4 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600"
-                    >
-                      Delhi
-                    </Link>
-
-                    <Link
-                      to="/best-ivf-centre-indirapuram"
-                      className="block px-5 py-4 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 border-t border-pink-100"
-                    >
-                      Indirapuram
-                    </Link>
-                  </div>
-                </>
-              ) : (
+            {[
+              { label: "Testimonials", href: "/testimonials" },
+              { label: "Blogs", href: "/blogs" },
+              // { label: "Contact Us", href: "/contact-us" },
+            ].map((l) => (
+              <li key={l.label}>
                 <Link
                   to={l.href}
-                  className="text-sm font-medium text-gray-700 hover:text-pink-600 transition-colors relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-pink-600 after:transition-all hover:after:w-full"
+                  className="px-4 py-2 text-sm font-medium text-[#4A1942] hover:text-[#C2185B] rounded-lg hover:bg-[#FDF2F6] transition-all"
                 >
                   {l.label}
                 </Link>
-              )}
-            </li>
-          ))}
-        </ul>
+              </li>
+            ))}
+          </ul>
 
-        <div className="hidden lg:flex items-center gap-3">
-          <a
-            href="tel:+91971 174 8080"
-            className="flex items-center gap-2 bg-pink-600 hover:bg-pink-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-md transition-all duration-300"
-          >
-            <Phone className="h-4 w-4" />
-            971 174 8080
-          </a>
-        </div>
-      </nav>
-
-      {open && (
-        <div className="lg:hidden bg-white border-t border-pink-100 max-h-[90vh] overflow-y-auto">
-          <div className="container mx-auto py-4 px-4">
-            <Link
-              to="/"
-              onClick={() => setOpen(false)}
-              className="block py-3"
+          <div className="hidden lg:flex items-center gap-3">
+            <a
+              href="tel:+919711748080"
+              className="flex items-center gap-2 text-sm font-medium text-[#C2185B] hover:text-[#4A1942] transition-colors"
             >
-              Home
-            </Link>
+              <Phone className="h-4 w-4" />
+              971 174 8080
+            </a>
+            <a
+              href="/contact-us"
+              className="
+                relative flex items-center gap-2 bg-[#C2185B] hover:bg-[#a0154d]
+                text-white text-sm font-semibold px-5 py-2.5 rounded-full
+                shadow-[0_4px_16px_rgba(194,24,91,0.35)]
+                hover:shadow-[0_6px_20px_rgba(194,24,91,0.45)]
+                transition-all duration-200 group/cta overflow-hidden
+              "
+            >
+              <Heart className="h-4 w-4 fill-white/30 group-hover/cta:fill-white/60 transition-all" />
+              Book Consultation
+            </a>
+          </div>
 
-            <div className="border-b border-pink-100 py-2">
-              <button
-                onClick={() =>
-                  setShowTreatments(!showTreatments)
-                }
-                className="w-full flex items-center justify-between py-3"
+          <div className="flex lg:hidden items-center gap-2">
+            <a
+              href="tel:+919711748080"
+              className="flex items-center gap-1.5 bg-[#FDF2F6] border border-[#F8BBD9] px-3 py-2 rounded-full"
+            >
+              <Phone className="h-4 w-4 text-[#C2185B]" />
+              <span className="text-sm font-semibold text-[#C2185B]">971 174 8080</span>
+            </a>
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="h-10 w-10 flex items-center justify-center rounded-xl bg-[#FDF2F6] border border-[#F8BBD9]"
+              aria-label="Toggle menu"
+            >
+              {mobileOpen ? (
+                <X className="h-5 w-5 text-[#4A1942]" />
+              ) : (
+                <Menu className="h-5 w-5 text-[#4A1942]" />
+              )}
+            </button>
+          </div>
+        </nav>
+
+        {mobileOpen && (
+          <div className="lg:hidden bg-white border-t border-[#F8BBD9] max-h-[85vh] overflow-y-auto">
+            <div className="max-w-7xl mx-auto px-5 py-4 space-y-0">
+              {/* <Link
+                to="/"
+                onClick={() => setMobileOpen(false)}
+                className="block py-4 text-sm font-semibold text-[#4A1942] border-b border-[#F8BBD9]"
               >
-                <span className="text-sm font-semibold text-gray-800">
-                  Treatments
-                </span>
+                Home
+              </Link> */}
 
-                <ChevronDown
-                  className={`h-4 w-4 transition-transform ${showTreatments ? "rotate-180" : ""
-                    }`}
-                />
-              </button>
-
-              {showTreatments && (
-                <div className="mt-2 space-y-3">
-                  {treatmentCategories.map((category) => (
-                    <div
-                      key={category.title}
-                      className="border border-pink-100 rounded-2xl overflow-hidden"
-                    >
+              <MobileAccordion
+                label="Our Services"
+                isOpen={openAccordion === "services"}
+                onToggle={() =>
+                  setOpenAccordion(
+                    openAccordion === "services" ? null : "services"
+                  )
+                }
+              >                
+              <div className="space-y-2 mt-1">
+                  {treatmentCategories.map((cat) => (
+                    <div key={cat.title} className="rounded-xl overflow-hidden border border-[#F8BBD9]">
                       <button
                         onClick={() =>
-                          setOpenCategory(
-                            openCategory === category.title
-                              ? null
-                              : category.title
+                          setMobileTreatmentCat(
+                            mobileTreatmentCat === cat.title ? null : cat.title
                           )
                         }
-                        className="w-full flex items-center justify-between px-4 py-4 bg-pink-50"
+                        className="w-full flex items-center justify-between px-4 py-3 bg-[#FDF2F6] text-sm font-semibold text-[#4A1942]"
                       >
-                        <span className="text-sm font-semibold text-gray-800">
-                          {category.title}
-                        </span>
-
+                        {cat.title}
                         <ChevronDown
-                          className={`h-4 w-4 transition-transform ${openCategory === category.title
-                            ? "rotate-180"
-                            : ""
+                          className={`h-4 w-4 text-[#C2185B] transition-transform duration-200 ${mobileTreatmentCat === cat.title ? "rotate-180" : ""
                             }`}
                         />
                       </button>
-
-                      {openCategory === category.title && (
-                        <div className="bg-white py-2">
-                          {category.items.map((item) => (
+                      {mobileTreatmentCat === cat.title && (
+                        <div className="bg-white grid grid-cols-2 gap-px p-3">
+                          {cat.items.map((item) => (
                             <Link
                               key={item.slug}
                               to={`/${item.slug}`}
-                              onClick={() => setOpen(false)}
-                              className="block px-5 py-3 text-sm text-gray-600 hover:bg-pink-50 hover:text-pink-600"
+                              onClick={() => setMobileOpen(false)}
+                              className="px-3 py-2.5 text-xs text-gray-600 rounded-lg hover:bg-[#FDF2F6] hover:text-[#C2185B] transition-colors"
                             >
                               {item.name}
                             </Link>
@@ -311,112 +376,87 @@ const Navbar = () => {
                     </div>
                   ))}
                 </div>
-              )}
-            </div>
+              </MobileAccordion>
 
-            <div className="border-b border-pink-100 py-2">
-              <button
-                onClick={() =>
-                  setShowDoctors(!showDoctors)
+              <MobileAccordion
+                label="Our Doctors"
+                isOpen={openAccordion === "doctors"}
+                onToggle={() =>
+                  setOpenAccordion(
+                    openAccordion === "doctors" ? null : "doctors"
+                  )
                 }
-                className="w-full flex items-center justify-between py-3"
-              >
-                <span className="text-sm font-semibold text-gray-800">
-                  Doctors
-                </span>
-
-                <ChevronDown
-                  className={`h-4 w-4 transition-transform ${showDoctors ? "rotate-180" : ""
-                    }`}
-                />
-              </button>
-
-              {showDoctors && (
-                <div className="mt-2 border border-pink-100 rounded-2xl overflow-hidden">
-                  <Link
-                    to="/doctor/pallavi-singh"
-                    onClick={() => setOpen(false)}
-                    className="block px-5 py-4 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600"
-                  >
-                    Dr. Pallavi Singh
-                  </Link>
-
-                  <Link
-                    to="/doctor/santosh-kumar"
-                    onClick={() => setOpen(false)}
-                    className="block px-5 py-4 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 border-t border-pink-100"
-                  >
-                    Dr. Santosh Kumar Arjun
-                  </Link>
+              >                
+              <div className="rounded-xl overflow-hidden border border-[#F8BBD9]">
+                  {doctors.map((d, i) => (
+                    <Link
+                      key={d.slug}
+                      to={`/doctor/${d.slug}`}
+                      onClick={() => setMobileOpen(false)}
+                      className={`flex flex-col px-5 py-3.5 hover:bg-[#FDF2F6] hover:text-[#C2185B] transition-colors ${i > 0 ? "border-t border-[#F8BBD9]" : ""
+                        }`}
+                    >
+                      <span className="text-sm font-medium text-[#4A1942]">{d.name}</span>
+                      <span className="text-xs text-gray-400 mt-0.5">{d.title}</span>
+                    </Link>
+                  ))}
                 </div>
-              )}
-            </div>
+              </MobileAccordion>
 
-            <div className="border-b border-pink-100 py-2">
-              <button
-                onClick={() =>
-                  setShowCentres(!showCentres)
+              <MobileAccordion
+                label="Our Centres"
+                isOpen={openAccordion === "centres"}
+                onToggle={() =>
+                  setOpenAccordion(
+                    openAccordion === "centres" ? null : "centres"
+                  )
                 }
-                className="w-full flex items-center justify-between py-3"
               >
-                <span className="text-sm font-semibold text-gray-800">
-                  Centre
-                </span>
-
-                <ChevronDown
-                  className={`h-4 w-4 transition-transform ${showCentres ? "rotate-180" : ""
-                    }`}
-                />
-              </button>
-
-              {showCentres && (
-                <div className="mt-2 border border-pink-100 rounded-2xl overflow-hidden">
-                  <Link
-                    to="/best-ivf-centre-delhi"
-                    onClick={() => setOpen(false)}
-                    className="block px-5 py-4 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600"
-                  >
-                    Delhi
-                  </Link>
-
-                  <Link
-                    to="/best-ivf-centre-indirapuram"
-                    onClick={() => setOpen(false)}
-                    className="block px-5 py-4 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 border-t border-pink-100"
-                  >
-                    Indirapuram
-                  </Link>
+                <div className="rounded-xl overflow-hidden border border-[#F8BBD9]">
+                  {centres.map((c, i) => (
+                    <Link
+                      key={c.slug}
+                      to={`/${c.slug}`}
+                      onClick={() => setMobileOpen(false)}
+                      className={`block px-5 py-3.5 text-sm font-medium text-[#4A1942] hover:bg-[#FDF2F6] hover:text-[#C2185B] transition-colors ${i > 0 ? "border-t border-[#F8BBD9]" : ""
+                        }`}
+                    >
+                      {c.name}
+                    </Link>
+                  ))}
                 </div>
-              )}
+              </MobileAccordion>
+
+              {[
+                { label: "Testimonials", href: "/testimonials" },
+                { label: "Blogs", href: "/blogs" },
+                // { label: "Contact Us", href: "/contact-us" },
+              ].map((l) => (
+                <Link
+                  key={l.label}
+                  to={l.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="block py-4 text-sm font-semibold text-[#4A1942] border-b border-[#F8BBD9]"
+                >
+                  {l.label}
+                </Link>
+              ))}
+
+              <div className="pt-4 pb-2">
+                <a
+                  href="/contact-us"
+                  className="flex items-center justify-center gap-2 w-full bg-[#C2185B] text-white text-sm font-semibold py-3.5 rounded-full shadow-[0_4px_16px_rgba(194,24,91,0.35)]"
+                >
+                  <Heart className="h-4 w-4 fill-white/40" />
+                  Book a Consultation
+                </a>
+              </div>
             </div>
-
-            <Link
-              to="/testimonials"
-              onClick={() => setOpen(false)}
-              className="block py-3"
-            >
-              Testimonials
-            </Link>
-
-            <Link
-              to="/blogs"
-              onClick={() => setOpen(false)}
-              className="block py-3"
-            >
-              Blog
-            </Link>
-
-            <Link
-              to="/contact-us"
-              onClick={() => setOpen(false)}
-              className="block py-3"
-            >
-              Contact Us
-            </Link>
           </div>
-        </div>
-      )}
-    </header>
+        )}
+      </header>
+      <div className="h-[66px]" />
+    </>
   );
 };
 

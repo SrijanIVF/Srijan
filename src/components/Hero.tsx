@@ -11,7 +11,7 @@ const Hero = () => {
     <>
       {showPopup && <LeadPopup onClose={() => setShowPopup(false)} />}
 
-      <section className="block lg:hidden relative overflow-hidden bg-white py-16">
+      <section className="block lg:hidden relative overflow-hidden bg-white ">
         <div className="relative w-full h-[260px] overflow-hidden">
           <img
             src={heroImg}
@@ -47,7 +47,7 @@ const Hero = () => {
 
       <section
         id="home"
-        className="hidden lg:block relative pt-24 pb-20 overflow-hidden gradient-hero"
+        className="hidden lg:block relative pt-1 pb-8 overflow-hidden gradient-hero"
       >
         <div
           className="absolute -top-20 -right-20 h-96 w-96 rounded-full bg-primary/20 blur-3xl"

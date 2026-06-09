@@ -118,32 +118,19 @@ const Index = () => (
         },
       }}
     />
-
     <Navbar />
-
     <Hero />
-
     <About />    
     <Benefits />
-
     <WhyChoose />
-
     <Doctors />
-
     <Treatments />
     <CentreCard />
     <Reviews />
-
     <SuccessStories />
-
     <Testimonials />
-
     <Appointment />
-
     <Footer />
-
-   
-
     <LeadPopup />
   </main>
 );

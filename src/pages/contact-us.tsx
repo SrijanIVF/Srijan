@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Appointments from "@/components/Appointment";
 import LeadPopup from "@/components/LeadPopup";
-import contactBanner from "@/assets/contact-banner.png";
+import contactBanner from "@/assets/contact2.jpg";
 
 const contactCards = [
   {
@@ -58,19 +58,14 @@ const ContactPage = () => {
     <>
       <Navbar />
 
-      {/* HERO BANNER */}
       <section className="relative h-[450px] md:h-[550px] overflow-hidden">
-        {/* Background Image */}
         <img
           src={contactBanner}
           alt="Contact Srijan IVF"
           className="absolute inset-0 w-full h-full object-cover"
         />
 
-        {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-pink-900/80 via-pink-800/60 to-transparent" />
-
-        {/* Content */}
         <div className="relative z-10 h-full flex items-center">
           <div className="max-w-7xl mx-auto px-6 w-full">
             <div className="max-w-2xl text-white">
@@ -175,7 +170,7 @@ const ContactPage = () => {
         <LeadPopup onClose={() => setShowPopup(false)} />
       )}
       <LeadPopup />
-     
+
       <Footer />
     </>
   );
