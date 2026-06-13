@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Callus from "@/components/callbtn";
+// import Callus from "@/components/callbtn";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import drPallaviImg from "@/assets/Dr pallavi srijanivf.png";
 import Reviews from "@/components/Reviews";
@@ -572,7 +572,7 @@ const InternationalPatientPage = () => {
         </div>
       </section>
 
-      <Callus />
+      {/* <Callus /> */}
       <WhatsAppButton />
       <Footer />
     </>
