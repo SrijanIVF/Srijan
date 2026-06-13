@@ -46,6 +46,7 @@ import Indexfb from "./pages/fb/lp/Index.tsx";
 import TermsAndConditions from "./pages/termsandconditions.tsx";
 import ScrollToTop from "./components/ScrolltoTop.tsx";
 import  WhatsAppWidget from "./components/WhatsAppButton.tsx"
+import InternationalPatient from "./pages/International-patient.tsx"; 
 
 const queryClient = new QueryClient();
 
@@ -99,6 +100,7 @@ const App = () => (
           <Route path="/lp/best-ivf-centre-india" element={<Indexlp />} />
           <Route path="/fb/lp/best-ivf-centre-india" element={<Indexfb />} />
           <Route path="/termsandconditions" element={<TermsAndConditions />} />
+          <Route path="/ivf-for-international-patient" element={<InternationalPatient />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
